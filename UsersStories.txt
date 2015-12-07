@@ -1,0 +1,39 @@
+Fiche utilisateur n°1
+Nom : Kévin
+Milieu Social : Défavorisé, ce fait refuser tous ses caprices, n'a pas d'argent pour jouer comme les copains
+Age : 8 ans
+Expertise Informatique : A déjà vu et utilisé, avec modération une console portable.
+Expertise sur le sujet traité : Connait parce que les copains en parlent dans la cours de récréation.
+Utilisation principale de l'application : Profiter à fond de son seul et unique jeu, il va forcément le parcourir en entier.
+Utilisation secondaire de l'application :  Etre le meilleur dresseur, avoir les pokémons qui ont le plus haut niveau, chaque jour dans la cours face aux copains.
+Pourquoi cette application et pas une autre : Les autres version étaient un succès, et noël approche, c'est la seule fois de l'année ou il a le droit d'obtenir quelques chose de récent.
+
+Fiche utilisateur n°2
+Nom : Stanley
+Milieu Social : Riche, dépensier à outrance, achète tout, peu importe le prix, ses parent lui cède tout, 800€/mois d'argent de poche. C'est un tricheur invétéré.
+Age : 15 1/2 ans
+Expertise Informatique : Manipule depuis son enfance tous types de technologies, console de salon, portable, ordinateur.
+Expertise sur le sujet traité : Possède tous les produits pokémon
+Utilisation principale de l'application : Etre le premier à finir cette nouvelle version sans pourtant explorer le jeu dans son intégralité quitte à tricher.
+Utilisation secondaire de l'application : Collecter tous les pokémons, de toutes les générations, sans oublier un seul, y compris les plus rares !
+Pourquoi cette application et pas une autre : Parce qu'il l'a pas encore !
+
+Fiche utilisateur n°3
+Nom : Jeffrey
+Milieu Social : Étudiant de la classe moyenne, se fait de petit plaisir de temps en temps.
+Age : 20 ans
+Expertise Informatique : A vu les technologies évoluer avec lui, sait comment en faire une bonne utilisation.
+Expertise sur le sujet traité : A grandi avec pokémon et fait perdurer ce lien magique
+Utilisation principale de l'application : Pas d'intérêt "social" autre que faire une pause dans ses études le soir.
+Utilisation secondaire de l'application : S'occuper sur les toilettes ou en cours
+Pourquoi cette application et pas une autre : C'est le jeu de son enfance
+
+Fiche utilisateur n°4
+Nom : Franck-Henri
+Milieu Social : Chomage et célibataire, en profite pour rejouer à des jeux de sa jeunesse
+Age : 30 ans
+Expertise Informatique : Correcte car il a eu de par son métier précédent l'occasion de se former au NTIC
+Expertise sur le sujet traité : Connais le générique par coeur, peut être défier sur le sujet, participe à des débats à ce propos.
+Utilisation principale de l'application : Occuper son temps libre et échapper à la tristesse de sa situation.
+Utilisation secondaire de l'application : Revivre des moments de sa jeunesse en visant plutôt les actions et les pokémons en rapport avec les versions de son enfance.
+Pourquoi cette application et pas une autre : La nostalgie tout en bénéficiant des dernières technologies et donc des derniers graphismes et interface utilisateurs.
