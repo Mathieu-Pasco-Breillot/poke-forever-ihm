@@ -7,13 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image x:Name="image" Margin="0" Source="Assets/red-wall-red-pokemon-32627031-1280-887.jpg" Stretch="UniformToFill" NineGrid="0"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/red-wall-red-pokemon-32627031-1280-887.jpg"/>
+        </Grid.Background>        
         <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center">
-            <Button x:Name="savedGame1" Content="Partie 1 - 08/12/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,0,0,5" Foreground="White" Background="#B2E65400"/>
-            <Button x:Name="savedGame2" Content="Partie 2 - 01/12/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,5" Foreground="White" Background="#B2E65400"/>
-            <Button x:Name="savedGame3" Content="Partie 3 - 15/11/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,5" Foreground="White" Background="#B2E65400"/>
-            <Button x:Name="savedGame4" Content="Partie 4 - 08/11/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,5" Foreground="White" Background="#B2E65400"/>
+            <Button x:Name="savedGame1" Content="Partie 1 - 08/12/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,0,0,5" Foreground="White" Background="#B2E65400" Click="LoadGame"/>
+            <Button x:Name="savedGame2" Content="Partie 2 - 01/12/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,5" Foreground="White" Background="#B2E65400" Click="LoadGame"/>
+            <Button x:Name="savedGame3" Content="Partie 3 - 15/11/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,5" Foreground="White" Background="#B2E65400" Click="LoadGame"/>
+            <Button x:Name="savedGame4" Content="Partie 4 - 08/11/2015" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="280" Height="35" Margin="0,5" Foreground="White" Background="#B2E65400" Click="LoadGame"/>
             <Grid HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition/>

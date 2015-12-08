@@ -17,14 +17,19 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PokeForeverIHM
 {
-    /// <summary>
-    /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
-    {
-        public MainPage()
-        {
-            this.InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
+	/// </summary>
+	public sealed partial class MainPage : Page
+	{
+		public MainPage()
+		{
+			InitializeComponent();
+		}
+
+		private void LoadGame(object sender, RoutedEventArgs e)
+		{
+			((Frame)Window.Current.Content).Navigate(typeof(GamePage));
+		}
+	}
 }
