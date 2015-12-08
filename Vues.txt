@@ -1,9 +1,10 @@
-Vue 1 : Login Page
-Vue 2 : Gestion des parties (contient les parties déjà créé)
-Vue 2.1 : Nouvelle Partie (retour à l'écran 2)
-Vue 2.2 : Effacer partie (retour à l'écran 2)
-Vue 3 : Vue du jeu avec la map et les commandes (mainview)
-Vue 3.1 : Vue de gestion des pokémons
-Vue 3.2 : Pokédex
-Vue 3.3 : Inventaire
-Vue 3.4 : MapMonde
+Vue 1 : Gestion des parties (contient les parties déjà créé)
+Vue 1.1 : Nouvelle Partie (retour à l'écran 2)
+Vue 1.2 : Effacer partie (retour à l'écran 2)
+Vue 2 : Vue du jeu avec la map et les commandes (mainview)
+Vue 2.0.1 : Sauvegarder
+Vue 2.0.2 : Quitter
+Vue 2.1 : Vue de gestion des pokémons
+Vue 2.2 : Pokédex
+Vue 2.3 : Inventaire
+Vue 2.4 : MapMonde
