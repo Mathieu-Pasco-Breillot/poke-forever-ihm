@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="PokeForeverIHM.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokeForeverIHM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <ScrollViewer Height="80" Margin="0" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="9,0">
+                    <Image x:Name="pokemon1" Source="Assets/250px-Barbicha-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon1-lvl" Text="44" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="9,0">
+                    <Image x:Name="pokemon2" Source="Assets/250px-Brouhabam-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon2-lvl" Text="35" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="9,0">
+                    <Image x:Name="pokemon3" Source="Assets/250px-Camérupt-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon3-lvl" Text="42" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="9,0">
+                    <Image x:Name="pokemon4" Source="Assets/250px-Groret-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon4-lvl" Text="24" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="9,0">
+                    <Image x:Name="pokemon5" Source="Assets/250px-Milobellus-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon5-lvl" Text="14" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="9,0">
+                    <Image x:Name="pokemon6" Source="Assets/250px-Morphéo-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon6-lvl" Text="23" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="9,0">
+                    <Image x:Name="pokemon7" Source="Assets/250px-Pingoléon-DP.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon7-lvl" Text="9" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Padding="5" Margin="5,0">
+                    <Image x:Name="pokemon8" Source="Assets/250px-Tortipouss-Pt.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="pokemon8-lvl" Text="13" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <Image x:Name="background" Source="Assets/FloralCity.png" Stretch="Fill"/>
+    </StackPanel>
+</Page>

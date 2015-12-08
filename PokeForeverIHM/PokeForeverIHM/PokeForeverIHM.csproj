@@ -116,7 +116,10 @@
     <Content Include="Assets\250px-Pingoléon-DP.png" />
     <Content Include="Assets\250px-Tortipouss-Pt.png" />
     <Content Include="Assets\773px-Florizarre-RFVF.png" />
+    <Content Include="Assets\FloralCity.png" />
+    <Content Include="Assets\PKMN-Unova-Map.jpg" />
     <Content Include="Assets\Pokémon.jpg" />
+    <Content Include="Assets\red-wall-red-pokemon-32627031-1280-887.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SavedGames.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
