@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace PokeForeverIHM.Class
 {
 	public class Pokemons :ICollection<Pokemon>
 	{
-		private List<Pokemon> pokemons;
+		private ObservableCollection<Pokemon> pokemons;
 
 		public int Count
 		{
