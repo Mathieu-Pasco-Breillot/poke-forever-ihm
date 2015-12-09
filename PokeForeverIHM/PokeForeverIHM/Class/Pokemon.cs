@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace PokeForeverIHM.Class
 {
@@ -13,7 +9,7 @@ namespace PokeForeverIHM.Class
 		string description;
 		short level = 1;
 		Types type;
-		Windows.UI.Xaml.Controls.Image image;
+		Image image;
 
 		public string Name
 		{
@@ -71,7 +67,7 @@ namespace PokeForeverIHM.Class
 		{
 			set
 			{
-				image.Source = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new System.Uri(value));
+				image.Source = new BitmapImage(new System.Uri(value));
 			}
 		}
 
