@@ -10,7 +10,7 @@
     d:DesignWidth="90">
 
     <StackPanel HorizontalAlignment="Center" Background="#7FE07C29" CornerRadius="10" VerticalAlignment="Center" Width="80" Height="80" CanDrag="True" Padding="0,10,0,0">
-        <Image  Height="50" Width="70"/>
+        <Image Height="50" Width="70"/>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
     </StackPanel>
 </UserControl>

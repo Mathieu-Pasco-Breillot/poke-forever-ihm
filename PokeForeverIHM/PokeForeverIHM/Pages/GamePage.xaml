@@ -9,42 +9,7 @@
     mc:Ignorable="d">
 
     <RelativePanel Background="Black" Margin="0" Padding="0" >
-        <ScrollViewer x:Name="PokemonList" Height="100" Margin="0" VerticalAlignment="Top" HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="10,5,5,5" Background="#7FE07C29" CornerRadius="5" VerticalAlignment="Center" Width="80" Height="80" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon1" Source="ms-appx:///Assets/250px-Barbicha-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon1_lvl" Text="44" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="5" Background="#7FE07C29" CornerRadius="5" Height="80" Width="80" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon2" Source="ms-appx:///Assets/250px-Brouhabam-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon2_lvl" Text="35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="5" Background="#7FE07C29" Height="80" Width="80" CornerRadius="5" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon3" Source="ms-appx:///Assets/250px-Camérupt-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon3_lvl" Text="42" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="5" Background="#7FE07C29" Width="80" Height="80" CornerRadius="5" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon4" Source="ms-appx:///Assets/250px-Groret-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon4_lvl" Text="24" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="5" Background="#7FE07C29" CornerRadius="5" Width="80" Height="80" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon5" Source="ms-appx:///Assets/250px-Milobellus-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon5_lvl" Text="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="5" Background="#7FE07C29" CornerRadius="5" Width="80" Height="80" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon6" Source="ms-appx:///Assets/250px-Morphéo-RS.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon6_lvl" Text="23" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="5" CornerRadius="5" Width="80" Height="80" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon7" Source="ms-appx:///Assets/250px-Pingoléon-DP.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon7_lvl" Text="9" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Padding="5" Margin="5" CornerRadius="5" Width="80" Height="80" CanDrag="True" AllowDrop="True">
-                    <Image x:Name="pokemon8" Source="ms-appx:///Assets/250px-Tortipouss-Pt.png" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="pokemon8_lvl" Text="13" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
-                </StackPanel>
-            </StackPanel>
-        </ScrollViewer>
+        <uControl:PokeManager x:Name="PokemonList" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
         <Image x:Name="MainBackground" Source="ms-appx:///Assets/FloralCity.png" Margin="0" RelativePanel.Below="PokemonList" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Stretch="Fill"/>
         <uControl:DirectionalCross VerticalAlignment="Top" Margin="10,0,0,10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground"/>
         <uControl:ActionButton RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignRightWith="MainBackground" Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
