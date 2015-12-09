@@ -13,23 +13,15 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace PokeForeverIHM
 {
-	/// <summary>
-	/// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
-	/// </summary>
-	public sealed partial class MainPage : Page
+	public sealed partial class DirectionalCross : UserControl
 	{
-		public MainPage()
+		public DirectionalCross()
 		{
 			InitializeComponent();
-		}
-
-		private void LoadGame(object sender, RoutedEventArgs e)
-		{
-			((Frame)Window.Current.Content).Navigate(typeof(GamePage));
 		}
 	}
 }
