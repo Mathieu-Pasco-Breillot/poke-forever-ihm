@@ -6,7 +6,7 @@ namespace PokeForeverIHM.Class
 {
 	public class Pokemons :ICollection<Pokemon>
 	{
-		private ObservableCollection<Pokemon> pokemons;
+		public ObservableCollection<Pokemon> pokemons;
 
 		public int Count
 		{
@@ -57,6 +57,11 @@ namespace PokeForeverIHM.Class
 		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return ((ICollection<Pokemon>)pokemons).GetEnumerator();
+		}
+
+		public void PopulateWithPokemons()
+		{
+			pokemons.Add(new Pokemon("a", 42, Types.Dark, ""));
 		}
 	}
 }

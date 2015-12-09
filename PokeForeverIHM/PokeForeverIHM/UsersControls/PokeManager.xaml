@@ -8,12 +8,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="200">
-    
-    <ScrollViewer Background="Black" HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled">
-        <Hub Name="PokeHub" Padding="0" VerticalAlignment="Top">
+
+        <ScrollViewer Background="Black" HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled">
+        <Hub Name="PokeHub" DataContext="{Binding}" Padding="0" VerticalAlignment="Top">
             <HubSection Foreground="White" Padding="10,5,0,5" VerticalAlignment="Center">
                 <DataTemplate>
-                    <uControl:PokemonDisplayer/>
+                    <StackPanel HorizontalAlignment="Center" Background="#7FE07C29" CornerRadius="10" VerticalAlignment="Center" Width="80" Height="80" CanDrag="True" Padding="0,10,0,0">
+                        <Image Source="{Binding Image}" Height="50" Width="70"/>
+                        <TextBlock Text="{Binding Level}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
+                    </StackPanel>
+                    <!--<uControl:PokemonDisplayer/>-->
                 </DataTemplate>
             </HubSection>
         </Hub>
