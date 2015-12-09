@@ -6,11 +6,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="40"
-    d:DesignWidth="40">
+    d:DesignHeight="80"
+    d:DesignWidth="80">
 
-    <Grid>
-        <Ellipse Fill="#B2000000" HorizontalAlignment="Right" Height="30" Margin="0,0,5,5" Stroke="#B2000000" VerticalAlignment="Bottom" Width="30" RenderTransformOrigin="-1.312,-1.421"/>
-        <TextBlock x:Name="textValue" HorizontalAlignment="Center" VerticalAlignment="Center" Text="A" Foreground="#FFFFFFFF" FontSize="16" Margin="0,0,0,3"/>
-    </Grid>
+    <RelativePanel CornerRadius="40,40,40,40" MinHeight="80" MinWidth="80" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#CC000000">
+        <TextBlock x:Name="textValue" HorizontalAlignment="Center" VerticalAlignment="Center" Text="A" Foreground="#FFFFFFFF" FontSize="32" Margin="0,0,0,8" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+    </RelativePanel>
 </UserControl>
