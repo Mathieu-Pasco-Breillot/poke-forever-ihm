@@ -83,7 +83,6 @@ namespace PokeForeverIHM.Class
 			Type = type;
 			Description = description;
 			Image = imageURI;
-			
 		}
 	}
 }
