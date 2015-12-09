@@ -1,0 +1,16 @@
+﻿<UserControl
+    x:Class="PokeForeverIHM.UsersControls.PokemonDisplayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokeForeverIHM.UsersControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="90"
+    d:DesignWidth="90">
+
+    <StackPanel HorizontalAlignment="Center" Background="#7FE07C29" CornerRadius="10" VerticalAlignment="Center" Width="80" Height="80" CanDrag="True" Padding="0,10,0,0">
+        <Image  Height="50" Width="70"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
+    </StackPanel>
+</UserControl>
