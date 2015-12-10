@@ -1,8 +1,5 @@
-﻿using PokeForeverIHM.Class;
-using PokeForeverIHM.UsersControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,27 +20,11 @@ namespace PokeForeverIHM.Pages
 	/// <summary>
 	/// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
 	/// </summary>
-	public sealed partial class Pokedex : Page
+	public sealed partial class Map : Page
 	{
-		private ObservableCollection<Pokemon> pokedexCollection;
-		public Pokedex()
+		public Map()
 		{
-			InitializeComponent();
-			PokedexCollection = PokemonManager.Pokemons;
-			DataContext = PokedexCollection;
-		}
-
-		public ObservableCollection<Pokemon> PokedexCollection
-		{
-			get
-			{
-				return pokedexCollection;
-			}
-
-			set
-			{
-				pokedexCollection = value;
-			}
+			this.InitializeComponent();
 		}
 	}
 }
