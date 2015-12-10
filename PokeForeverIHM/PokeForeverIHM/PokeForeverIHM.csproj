@@ -114,8 +114,8 @@
       <DependentUpon>SavedGames.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsersControls\PokeManager.xaml.cs">
-      <DependentUpon>PokeManager.xaml</DependentUpon>
+    <Compile Include="UsersControls\PokemonManager.xaml.cs">
+      <DependentUpon>PokemonManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsersControls\PokemonDisplayer.xaml.cs">
       <DependentUpon>PokemonDisplayer.xaml</DependentUpon>
@@ -174,7 +174,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UsersControls\PokeManager.xaml">
+    <Page Include="UsersControls\PokemonManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
