@@ -37,6 +37,13 @@ namespace PokeForeverIHM.UsersControls
 		{
 			Pokemons.Add(new Pokemon("Brouhabam", 19, Types.Bug, "ms-appx:///Assets/250px-Brouhabam-RS.png"));
 			Pokemons.Add(new Pokemon("Barbicha", 42, Types.Dark, "ms-appx:///Assets/250px-Barbicha-RS.png"));
+			Pokemons.Add(new Pokemon("Camérupt", 68, Types.Dragon, "ms-appx:///Assets/250px-Camérupt-RS.png"));
+			Pokemons.Add(new Pokemon("Groret", 98, Types.Normal, "ms-appx:///Assets/250px-Groret-RS.png"));
+			Pokemons.Add(new Pokemon("Milobellus", 71, Types.Grass, "ms-appx:///Assets/250px-Milobellus-RS.png"));
+			Pokemons.Add(new Pokemon("Morphéo", 56, Types.Ghost, "ms-appx:///Assets/250px-Morphéo-RS.png"));
+			Pokemons.Add(new Pokemon("Pingoléon", 36, Types.Ice, "ms-appx:///Assets/250px-Pingoléon-DP.png"));
+			Pokemons.Add(new Pokemon("Tortipouss", 25, Types.Grass, "ms-appx:///Assets/250px-Tortipouss-Pt.png"));
+			Pokemons.Add(new Pokemon("Florizarre", 73, Types.Grass, "ms-appx:///Assets/773px-Florizarre-RFVF.png"));
 		}
 
 		private void PokeHub_Loaded(object sender, RoutedEventArgs e)
@@ -71,6 +78,12 @@ namespace PokeForeverIHM.UsersControls
 					}
 				}
 			}
+		}
+
+		private void PokeHub_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			int a = 0;
+			a += 1;
 		}
 	}
 }
