@@ -96,6 +96,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class\Backpack.cs" />
+    <Compile Include="Class\Player.cs" />
+    <Compile Include="Class\Pokedex.cs" />
     <Compile Include="Class\Pokemon.cs" />
     <Compile Include="Class\Types.cs" />
     <Compile Include="UsersControls\ActionButton.xaml.cs">
