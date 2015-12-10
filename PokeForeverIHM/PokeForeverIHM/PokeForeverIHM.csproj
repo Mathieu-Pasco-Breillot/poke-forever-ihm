@@ -99,6 +99,8 @@
     <Compile Include="Pages\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class\Pokemon.cs" />
+    <Compile Include="Class\Types.cs" />
     <Compile Include="UsersControls\ActionButton.xaml.cs">
       <DependentUpon>ActionButton.xaml</DependentUpon>
     </Compile>
@@ -117,6 +119,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersControls\MenuPanel.xaml.cs">
       <DependentUpon>MenuPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\PokemonManager.xaml.cs">
+      <DependentUpon>PokemonManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\PokemonDisplayer.xaml.cs">
+      <DependentUpon>PokemonDisplayer.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -176,7 +184,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UsersControls\MenuPanel.xaml">
+    <Page Include="UsersControls\MenuPanel.xaml"/>
+    <Page Include="UsersControls\PokemonManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\PokemonDisplayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
