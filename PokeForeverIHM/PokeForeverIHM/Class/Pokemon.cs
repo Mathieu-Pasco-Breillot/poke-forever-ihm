@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using System;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace PokeForeverIHM.Class
@@ -9,7 +11,7 @@ namespace PokeForeverIHM.Class
 		string description;
 		short level = 1;
 		Types type;
-		Image image;
+		ImageSource image;
 
 		public string Name
 		{
@@ -37,16 +39,16 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public short Level
+		public object Level
 		{
 			get
 			{
-				return level;
+				return Convert.ToString(level);
 			}
 
 			set
 			{
-				level = value;
+				level = (short)value;
 			}
 		}
 
@@ -63,17 +65,20 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public string Image
+		public string SetImage
 		{
 			set
 			{
-				image.Source = new BitmapImage(new System.Uri(value));
+				image = new BitmapImage(new Uri(value));
 			}
 		}
 
-		public Image GetImage()
+		public ImageSource GetImage
 		{
-			return image;
+			get
+			{
+				return image;
+			}
 		}
 
 		public Pokemon(string name, short level, Types type, string imageURI, string description = "")
@@ -82,7 +87,7 @@ namespace PokeForeverIHM.Class
 			Level = level;
 			Type = type;
 			Description = description;
-			Image = imageURI;
+			SetImage = imageURI;
 		}
 	}
 }

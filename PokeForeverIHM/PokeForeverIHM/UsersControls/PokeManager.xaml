@@ -7,20 +7,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="200">
+    d:DesignHeight="200" Loaded="PokeHub_Loaded">
 
-        <ScrollViewer Background="Black" HorizontalScrollMode="Enabled" VerticalScrollMode="Disabled">
-        <Hub Name="PokeHub" DataContext="{Binding}" Padding="0" VerticalAlignment="Top">
-            <HubSection Foreground="White" Padding="10,5,0,5" VerticalAlignment="Center">
+    <ScrollViewer VerticalAlignment="Stretch" HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Auto" VerticalScrollMode="Disabled" VerticalScrollBarVisibility="Hidden">
+        <Pivot
+            Name="PokeHub" ItemsSource="{Binding}" Background="Black" 
+            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" CanDrag="True"
+            Loaded="PokeHub_Loaded">
+            <Pivot.HeaderTemplate>
                 <DataTemplate>
-                    <StackPanel HorizontalAlignment="Center" Background="#7FE07C29" CornerRadius="10" VerticalAlignment="Center" Width="80" Height="80" CanDrag="True" Padding="0,10,0,0">
-                        <Image Source="{Binding Image}" Height="50" Width="70"/>
-                        <TextBlock Text="{Binding Level}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White"/>
+                    <StackPanel HorizontalAlignment="Center" Padding="5"   Margin="5" Background="#7FE07C29" CornerRadius="5" Height="80" Width="80" CanDrag="True" AllowDrop="True">
+                        <Image Source="{Binding GetImage}" Height="50" MinWidth="70" VerticalAlignment="Top"/>
+                        <TextBlock Text="{Binding Level}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="14"/>
                     </StackPanel>
-                    <!--<uControl:PokemonDisplayer/>-->
                 </DataTemplate>
-            </HubSection>
-        </Hub>
-
+            </Pivot.HeaderTemplate>
+        </Pivot>
     </ScrollViewer>
 </UserControl>

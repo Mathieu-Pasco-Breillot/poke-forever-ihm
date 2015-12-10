@@ -97,7 +97,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class\Pokemon.cs" />
-    <Compile Include="Class\Pokemons.cs" />
     <Compile Include="Class\Types.cs" />
     <Compile Include="UsersControls\ActionButton.xaml.cs">
       <DependentUpon>ActionButton.xaml</DependentUpon>
