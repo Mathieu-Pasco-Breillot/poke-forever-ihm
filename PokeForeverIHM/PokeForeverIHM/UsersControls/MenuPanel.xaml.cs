@@ -21,6 +21,7 @@ namespace PokeForeverIHM.UsersControls
 {
     public sealed partial class MenuPanel : UserControl
     {
+        TranslateTransform MenuPanelTransform = new TranslateTransform();
         public MenuPanel()
         {
             this.InitializeComponent();
@@ -39,9 +40,46 @@ namespace PokeForeverIHM.UsersControls
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ((Frame)Window.Current.Content).Navigate(typeof(GamePage));
+            Frame maPage = ((Frame)Window.Current.Content);
+            Page p = maPage.Content as Page;
+            if (p.Name.Equals("gamePage"))
+            {
+                foreach(MenuPanel mp in FindVisualChildren<MenuPanel>(p))
+                {
+                    mp.Visibility = Visibility.Collapsed;
+                    if (mp.FocusState.Equals(1)){
+                        mp.Focus(FocusState.Unfocused);
+                    }
+                    if (mp.FocusState.Equals(1))
+                    {
+                        mp.Focus(FocusState.Unfocused);
+                    }
+                }
+            } else
+            {
+                ((Frame)Window.Current.Content).Navigate(typeof(GamePage));
+            }
         }
 
+        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+        {
+            if (depObj != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+                    if (child != null && child is T)
+                    {
+                        yield return (T)child;
+                    }
+
+                    foreach (T childOfChild in FindVisualChildren<T>(child))
+                    {
+                        yield return childOfChild;
+                    }
+                }
+            }
+        }
         private void StockButton_Click(object sender, RoutedEventArgs e)
         {
             //((Frame)Window.Current.Content).Navigate(typeof(Store));
