@@ -87,7 +87,7 @@ namespace PokeForeverIHM.UsersControls
 
         private void PokeButton_Click(object sender, RoutedEventArgs e)
         {
-            //((Frame)Window.Current.Content).Navigate(typeof(Pokedex));
+            ((Frame)Window.Current.Content).Navigate(typeof(Pokedex));
         }
 
         private void ParamButton_Click(object sender, RoutedEventArgs e)
