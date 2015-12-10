@@ -98,7 +98,6 @@
     </Compile>
     <Compile Include="Class\Backpack.cs" />
     <Compile Include="Class\Player.cs" />
-    <Compile Include="Class\Pokedex.cs" />
     <Compile Include="Class\Pokemon.cs" />
     <Compile Include="Class\Types.cs" />
     <Compile Include="UsersControls\ActionButton.xaml.cs">
@@ -109,6 +108,9 @@
     </Compile>
     <Compile Include="Pages\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pokedex.xaml.cs">
+      <DependentUpon>Pokedex.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsersControls\MenuButton.xaml.cs">
       <DependentUpon>MenuButton.xaml</DependentUpon>
@@ -166,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Pokedex.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
