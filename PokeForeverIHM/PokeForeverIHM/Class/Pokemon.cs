@@ -112,41 +112,41 @@ namespace PokeForeverIHM.Class
 			switch (type)
 			{
 				case Types.Bug:
-					return result;
+					return result = "ms-appx:///Assets/Types/bug.png";
 				case Types.Dark:
-					return result;
+					return result = "ms-appx:///Assets/Types/dark.png";
 				case Types.Dragon:
-					return result;
+					return result = "ms-appx:///Assets/Types/dragon.png";
 				case Types.Electric:
-					return result;
+					return result = "ms-appx:///Assets/Types/electric.png";
 				case Types.Fairy:
-					return result;
+					return result = "ms-appx:///Assets/Types/fairy.png";
 				case Types.Fight:
-					return result;
+					return result = "ms-appx:///Assets/Types/fight.png";
 				case Types.Fire:
-					return result;
+					return result = "ms-appx:///Assets/Types/fire.png";
 				case Types.Flying:
-					return result;
+					return result = "ms-appx:///Assets/Types/flying.png";
 				case Types.Ghost:
-					return result;
+					return result = "ms-appx:///Assets/Types/ghost.png";
 				case Types.Grass:
-					return result;
+					return result = "ms-appx:///Assets/Types/grass.png";
 				case Types.Ground:
-					return result;
+					return result = "ms-appx:///Assets/Types/ground.png";
 				case Types.Ice:
-					return result;
+					return result = "ms-appx:///Assets/Types/ice.png";
 				case Types.Normal:
-					return result;
+					return result = "ms-appx:///Assets/Types/normal.png";
 				case Types.Poison:
-					return result;
+					return result = "ms-appx:///Assets/Types/poison.png";
 				case Types.Psychic:
-					return result;
+					return result = "ms-appx:///Assets/Types/psychic.png";
 				case Types.Rock:
-					return result;
+					return result = "ms-appx:///Assets/Types/rock.png";
 				case Types.Steel:
-					return result;
+					return result = "ms-appx:///Assets/Types/steel.png";
 				case Types.Water:
-					return result;
+					return result = "ms-appx:///Assets/Types/water.png";
 				default:
 					return result;
 			}
