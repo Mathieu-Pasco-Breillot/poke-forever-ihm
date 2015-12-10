@@ -6,8 +6,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Pivot DataContext="{Binding}" Background="Black">
+        <Pivot.HeaderTemplate>
+            <DataTemplate>
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" Foreground="White" FontSize="18"/>
+                    <TextBlock Text="{Binding Level}" Foreground="White" FontSize="12"/>
+                </StackPanel>
+            </DataTemplate>
+        </Pivot.HeaderTemplate>
+        <Pivot.ItemTemplate>
+            <DataTemplate>
+                <RelativePanel>
+                    <Image Source="{Binding GetTypeImage}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
+                    <Image Source="{Binding GetImage}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" />
+                    <TextBlock Text="{Binding Abstract}" Foreground="White" FontSize="12" RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+            </DataTemplate>
+        </Pivot.ItemTemplate>
+    </Pivot>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    </Grid>
 </Page>

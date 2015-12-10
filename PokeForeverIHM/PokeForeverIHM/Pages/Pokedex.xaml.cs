@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PokeForeverIHM.Class;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +24,25 @@ namespace PokeForeverIHM.Pages
 	/// </summary>
 	public sealed partial class Pokedex : Page
 	{
-		public Pokedex()
+		private ObservableCollection<Pokemon> pokedexCollection;
+		public Pokedex(ref ObservableCollection<Pokemon> PokemonCollection)
 		{
-			this.InitializeComponent();
+			InitializeComponent();
+			PokedexCollection = PokemonCollection;
+			DataContext = PokemonCollection;
+		}
+
+		public ObservableCollection<Pokemon> PokedexCollection
+		{
+			get
+			{
+				return pokedexCollection;
+			}
+
+			set
+			{
+				pokedexCollection = value;
+			}
 		}
 	}
 }

@@ -8,10 +8,10 @@ namespace PokeForeverIHM.Class
 	public class Pokemon
 	{
 		string name;
-		string description;
+		string @abstract;
 		short level = 1;
 		Types type;
-		ImageSource image;
+		ImageSource image, imageType;
 
 		public string Name
 		{
@@ -26,16 +26,16 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public string Description
+		public string Abstract
 		{
 			get
 			{
-				return description;
+				return @abstract;
 			}
 
 			set
 			{
-				description = value;
+				@abstract = value;
 			}
 		}
 
@@ -81,13 +81,76 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public Pokemon(string name, short level, Types type, string imageURI, string description = "")
+		public string SetImageType
+		{
+			set
+			{
+				imageType = new BitmapImage(new Uri(value));
+			}
+		}
+		public ImageSource GetImageType
+		{
+			get
+			{
+				return imageType;
+			}
+		}
+
+		public Pokemon(string name, short level, Types type, string imageURI, string @abstract = "")
 		{
 			Name = name;
 			Level = level;
 			Type = type;
-			Description = description;
+			Abstract = @abstract;
 			SetImage = imageURI;
+			SetImageType = checkType(type);
 		}
+
+		private string checkType(Types type)
+		{
+			string result = "";
+			switch (type)
+			{
+				case Types.Bug:
+					return result;
+				case Types.Dark:
+					return result;
+				case Types.Dragon:
+					return result;
+				case Types.Electric:
+					return result;
+				case Types.Fairy:
+					return result;
+				case Types.Fight:
+					return result;
+				case Types.Fire:
+					return result;
+				case Types.Flying:
+					return result;
+				case Types.Ghost:
+					return result;
+				case Types.Grass:
+					return result;
+				case Types.Ground:
+					return result;
+				case Types.Ice:
+					return result;
+				case Types.Normal:
+					return result;
+				case Types.Poison:
+					return result;
+				case Types.Psychic:
+					return result;
+				case Types.Rock:
+					return result;
+				case Types.Steel:
+					return result;
+				case Types.Water:
+					return result;
+				default:
+					return result;
+			}
+		}
+
 	}
 }
