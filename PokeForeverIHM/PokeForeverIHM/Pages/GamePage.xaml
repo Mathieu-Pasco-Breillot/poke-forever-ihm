@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <RelativePanel Background="Black" Margin="0" Padding="0" >
-        <uControl:PokeManager x:Name="PokemonList" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
+        <uControl:PokeManager x:Name="PokemonList" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Height="100"/>
         <Image x:Name="MainBackground" Source="ms-appx:///Assets/FloralCity.png" Margin="0" RelativePanel.Below="PokemonList" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Stretch="Fill"/>
         <uControl:DirectionalCross VerticalAlignment="Top" Margin="10,0,0,10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground"/>
         <uControl:ActionButton RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignRightWith="MainBackground" Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
