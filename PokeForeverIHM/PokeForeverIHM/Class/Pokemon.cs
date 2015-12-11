@@ -11,7 +11,7 @@ namespace PokeForeverIHM.Class
 	{
 		string name;
 		string @abstract;
-		short level = 1;
+		short level;
 		Types type;
 		ImageSource image, imageType;
 		private static ObservableCollection<Pokemon> pokemons;
@@ -302,7 +302,7 @@ namespace PokeForeverIHM.Class
 				names.Add("Poissoroy");
 				names.Add("Stari");
 				names.Add("Staross");
-				names.Add("M. Mime");
+				names.Add("M.Mime");
 				names.Add("Insécateur");
 				names.Add("Lippoutou");
 				names.Add("Elektek");
