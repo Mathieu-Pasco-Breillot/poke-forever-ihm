@@ -24,7 +24,12 @@ namespace PokeForeverIHM
 			menuPanel.Visibility = Visibility.Visible;
 		}
 
-		private void menuPanel_LostFocus(object sender, RoutedEventArgs e)
+		private void Map_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+		{
+			menuPanel.Visibility = Visibility.Collapsed;
+		}
+
+		private void DirectionalCross_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
 		{
 			menuPanel.Visibility = Visibility.Collapsed;
 		}

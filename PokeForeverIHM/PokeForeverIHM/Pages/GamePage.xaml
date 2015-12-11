@@ -9,10 +9,10 @@
     mc:Ignorable="d"
     x:Name="gamePage">
 
-    <RelativePanel Background="Black" Margin="0" Padding="0" >
+    <RelativePanel Background="Black" Margin="0" Padding="0">
         <uControl:PokemonManager x:Name="PokemonList" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Height="100"/>
-        <Image x:Name="MainBackground" Source="ms-appx:///Assets/FloralCity.png" Margin="0" RelativePanel.Below="PokemonList" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Stretch="Fill"/>
-        <uControl:DirectionalCross VerticalAlignment="Top" Margin="10,0,0,10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground"/>
+        <Image x:Name="MainBackground" Source="ms-appx:///Assets/FloralCity.png" Margin="0" RelativePanel.Below="PokemonList" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Stretch="Fill" Tapped="Map_Tapped"/>
+        <uControl:DirectionalCross VerticalAlignment="Top" Margin="10,0,0,10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground" Tapped="DirectionalCross_Tapped"/>
         <uControl:ActionButton RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignRightWith="MainBackground" Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <uControl:MenuButton x:Name="menuButton" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="40" Height="80" Tapped="MenuButton_Click"/>
         <uControl:MenuPanel Visibility="Collapsed" x:Name="menuPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>

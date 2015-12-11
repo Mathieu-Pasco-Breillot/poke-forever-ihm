@@ -9,28 +9,36 @@
     mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="140"/>
         </Grid.ColumnDefinitions>
-        <Pivot x:Name="PokePivot" ItemsSource="{Binding}" Background="Black" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+        <Pivot x:Name="PokePivot" ItemsSource="{Binding}" Background="Black">
             <Pivot.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Name}" Foreground="White" FontSize="18"/>
+                        <TextBlock Text="{Binding Name}" Foreground="White" FontWeight="Bold" FontSize="12"/>
                         <TextBlock Text="{Binding Level}" Foreground="White" FontSize="12"/>
                     </StackPanel>
                 </DataTemplate>
             </Pivot.HeaderTemplate>
             <Pivot.ItemTemplate>
                 <DataTemplate>
-                    <RelativePanel>
-                        <Image Source="{Binding GetTypeImage}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
-                        <Image Source="{Binding GetImage}" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" />
-                        <TextBlock Text="{Binding Abstract}" Foreground="White" FontSize="12" RelativePanel.AlignBottomWithPanel="True"/>
-                    </RelativePanel>
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding GetImageType}"/>
+                        <Image Source="{Binding GetImage}" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="{Binding Abstract}" Foreground="White" FontSize="12"  HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="WrapWholeWords"/>
+                    </Grid>
                 </DataTemplate>
             </Pivot.ItemTemplate>
         </Pivot>
-        <uControl:MenuPanel RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" Grid.Column="1"/>
+        <uControl:MenuPanel Grid.Column="1"/>
     </Grid>
 </Page>

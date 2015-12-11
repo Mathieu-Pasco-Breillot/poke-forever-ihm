@@ -117,7 +117,8 @@
     </Compile>
     <Compile Include="UsersControls\MenuButton.xaml.cs">
       <DependentUpon>MenuButton.xaml</DependentUpon>
-    </Compile><Compile Include="UsersControls\MenuPanel.xaml.cs">
+    </Compile>
+    <Compile Include="UsersControls\MenuPanel.xaml.cs">
       <DependentUpon>MenuPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SavedGames.xaml.cs">
@@ -147,6 +148,23 @@
     <Content Include="Assets\PKMN-Unova-Map.jpg" />
     <Content Include="Assets\Pokémon.jpg" />
     <Content Include="Assets\red-wall-red-pokemon-32627031-1280-887.jpg" />
+    <Content Include="Assets\Types\bug.png" />
+    <Content Include="Assets\Types\dark.png" />
+    <Content Include="Assets\Types\dragon.png" />
+    <Content Include="Assets\Types\electric.png" />
+    <Content Include="Assets\Types\fairy.png" />
+    <Content Include="Assets\Types\fight.png" />
+    <Content Include="Assets\Types\fire.png" />
+    <Content Include="Assets\Types\flying.png" />
+    <Content Include="Assets\Types\grass.png" />
+    <Content Include="Assets\Types\ground.png" />
+    <Content Include="Assets\Types\ice.png" />
+    <Content Include="Assets\Types\normal.png" />
+    <Content Include="Assets\Types\poison.png" />
+    <Content Include="Assets\Types\psychic.png" />
+    <Content Include="Assets\Types\rock.png" />
+    <Content Include="Assets\Types\steel.png" />
+    <Content Include="Assets\Types\water.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
