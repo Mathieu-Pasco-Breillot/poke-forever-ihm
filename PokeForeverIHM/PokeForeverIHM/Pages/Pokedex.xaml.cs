@@ -29,7 +29,7 @@ namespace PokeForeverIHM.Pages
 		public Pokedex()
 		{
 			InitializeComponent();
-			PokedexCollection = PokemonManager.Pokemons;
+			PokedexCollection = Pokemon.GetPokemons();
 			DataContext = PokedexCollection;
 		}
 
