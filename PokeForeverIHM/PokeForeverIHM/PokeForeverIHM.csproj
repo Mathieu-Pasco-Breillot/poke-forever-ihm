@@ -146,6 +146,12 @@
     <Content Include="Assets\773px-Florizarre-RFVF.png" />
     <Content Include="Assets\FloralCity.png" />
     <Content Include="Assets\PKMN-Unova-Map.jpg" />
+    <Content Include="Assets\Pokemons\Bulbizarre.png" />
+    <Content Include="Assets\Pokemons\Dracaufeu.png" />
+    <Content Include="Assets\Pokemons\Florizarre.png" />
+    <Content Include="Assets\Pokemons\Herbizarre.png" />
+    <Content Include="Assets\Pokemons\Reptincel.png" />
+    <Content Include="Assets\Pokemons\Salamèche.png" />
     <Content Include="Assets\Pokémon.jpg" />
     <Content Include="Assets\red-wall-red-pokemon-32627031-1280-887.jpg" />
     <Content Include="Assets\Types\bug.png" />
