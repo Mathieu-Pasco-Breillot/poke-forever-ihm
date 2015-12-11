@@ -12,29 +12,21 @@ namespace PokeForeverIHM
 {
 	public sealed partial class GamePage : Page
 	{
-        TranslateTransform MenuPanelTranslate = new TranslateTransform();
+		TranslateTransform MenuPanelTranslate = new TranslateTransform();
 
 		public GamePage()
 		{
 			InitializeComponent();
 		}
-        
-        private void MenuButton_Click(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            menuPanel.Visibility = Visibility.Visible;
-            menuPanel.Focus(FocusState.Pointer);
-            FocusState fs = menuPanel.FocusState;
-            
-        }
 
-        private void menuPanel_LostFocus(object sender, RoutedEventArgs e)
-        {
-            FocusState fs = menuPanel.FocusState;
-            menuPanel.Visibility = Visibility.Collapsed;
-            if (menuPanel.FocusState.Equals(1))
-            {
-                menuPanel.Focus(FocusState.Unfocused);
-            }
-        }
-    }
+		private void MenuButton_Click(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+		{
+			menuPanel.Visibility = Visibility.Visible;
+		}
+
+		private void menuPanel_LostFocus(object sender, RoutedEventArgs e)
+		{
+			menuPanel.Visibility = Visibility.Collapsed;
+		}
+	}
 }

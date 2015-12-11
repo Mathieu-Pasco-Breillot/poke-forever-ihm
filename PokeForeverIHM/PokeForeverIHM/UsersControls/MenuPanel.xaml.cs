@@ -19,85 +19,69 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PokeForeverIHM.UsersControls
 {
-    public sealed partial class MenuPanel : UserControl
-    {
-        TranslateTransform MenuPanelTransform = new TranslateTransform();
-        public MenuPanel()
-        {
-            this.InitializeComponent();
-        }
+	public sealed partial class MenuPanel : UserControl
+	{
+		TranslateTransform MenuPanelTransform = new TranslateTransform();
+		public MenuPanel()
+		{
+			InitializeComponent();
+		}
 
-        private void MapButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Background = new SolidColorBrush(Colors.Orange);
-            ((Frame)Window.Current.Content).Navigate(typeof(Map));
-        }
+		public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+		{
+			if (depObj != null)
+			{
+				for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+				{
+					DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+					if (child != null && child is T)
+					{
+						yield return (T)child;
+					}
 
-        private void QuitButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Exit();
-        }
+					foreach (T childOfChild in FindVisualChildren<T>(child))
+					{
+						yield return childOfChild;
+					}
+				}
+			}
+		}
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame maPage = ((Frame)Window.Current.Content);
-            Page p = maPage.Content as Page;
-            if (p.Name.Equals("gamePage"))
-            {
-                foreach(MenuPanel mp in FindVisualChildren<MenuPanel>(p))
-                {
-                    mp.Visibility = Visibility.Collapsed;
-                    if (mp.FocusState.Equals(1)){
-                        mp.Focus(FocusState.Unfocused);
-                    }
-                    if (mp.FocusState.Equals(1))
-                    {
-                        mp.Focus(FocusState.Unfocused);
-                    }
-                }
-            } else
-            {
-                ((Frame)Window.Current.Content).Navigate(typeof(GamePage));
-            }
-        }
+		private void PokeButton_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			((Frame)Window.Current.Content).Navigate(typeof(Pokedex));
+		}
 
-        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
-        {
-            if (depObj != null)
-            {
-                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
-                {
-                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
-                    if (child != null && child is T)
-                    {
-                        yield return (T)child;
-                    }
+		private void MapButton_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			((Frame)Window.Current.Content).Navigate(typeof(Map));
+		}
 
-                    foreach (T childOfChild in FindVisualChildren<T>(child))
-                    {
-                        yield return childOfChild;
-                    }
-                }
-            }
-        }
-        private void StockButton_Click(object sender, RoutedEventArgs e)
-        {
-            //((Frame)Window.Current.Content).Navigate(typeof(Store));
-        }
+		private void QuitButton_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Application.Current.Exit();
+		}
 
-        private void PokeButton_Click(object sender, RoutedEventArgs e)
-        {
-            ((Frame)Window.Current.Content).Navigate(typeof(Pokedex));
-        }
+		private void BackButton_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Frame maPage = ((Frame)Window.Current.Content);
+			Page p = maPage.Content as Page;
+			if (p.Name.Equals("gamePage"))
+			{
+				foreach (MenuPanel mp in FindVisualChildren<MenuPanel>(p))
+				{
+					mp.Visibility = Visibility.Collapsed;
+				}
+			}
+			else
+			{
+				((Frame)Window.Current.Content).Navigate(typeof(GamePage));
+			}
+		}
 
-        private void ParamButton_Click(object sender, RoutedEventArgs e)
-        {
-            //((Frame)Window.Current.Content).Navigate(typeof(Parameters));
-        }
-
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            //((Frame)Window.Current.Content).Navigate(typeof(Save));
-        }
-    }
+		private void UserControl_LostFocus(object sender, RoutedEventArgs e)
+		{
+			Visibility = Visibility.Collapsed;
+		}
+	}
 }

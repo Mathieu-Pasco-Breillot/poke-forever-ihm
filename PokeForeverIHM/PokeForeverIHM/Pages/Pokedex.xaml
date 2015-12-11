@@ -33,5 +33,4 @@
         </Pivot>
         <uControl:MenuPanel RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" Grid.Column="1"/>
     </Grid>
-
 </Page>

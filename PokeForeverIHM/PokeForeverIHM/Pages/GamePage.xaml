@@ -15,6 +15,6 @@
         <uControl:DirectionalCross VerticalAlignment="Top" Margin="10,0,0,10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground"/>
         <uControl:ActionButton RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignRightWith="MainBackground" Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <uControl:MenuButton x:Name="menuButton" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="40" Height="80" Tapped="MenuButton_Click"/>
-        <uControl:MenuPanel Visibility="Collapsed" x:Name="menuPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" LostFocus="menuPanel_LostFocus"/>
+        <uControl:MenuPanel Visibility="Collapsed" x:Name="menuPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
     </RelativePanel>
 </Page>
