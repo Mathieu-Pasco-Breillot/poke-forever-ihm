@@ -78,10 +78,5 @@ namespace PokeForeverIHM.UsersControls
 				((Frame)Window.Current.Content).Navigate(typeof(GamePage));
 			}
 		}
-
-		private void UserControl_LostFocus(object sender, RoutedEventArgs e)
-		{
-			Visibility = Visibility.Collapsed;
-		}
 	}
 }

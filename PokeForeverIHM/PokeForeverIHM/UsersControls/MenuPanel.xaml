@@ -5,7 +5,7 @@
     xmlns:local="using:PokeForeverIHM.UsersControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" LostFocus="UserControl_LostFocus">
+    mc:Ignorable="d">
 
     <Grid Width="140" Background="Black">
         <Grid.RowDefinitions >
