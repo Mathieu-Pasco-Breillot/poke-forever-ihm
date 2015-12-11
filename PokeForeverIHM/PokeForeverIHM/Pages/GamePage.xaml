@@ -12,7 +12,24 @@
     <RelativePanel Background="Black" Margin="0" Padding="0">
         <uControl:PokemonManager x:Name="PokemonList" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Height="100"/>
         <Image x:Name="MainBackground" Source="ms-appx:///Assets/FloralCity.png" Margin="0" RelativePanel.Below="PokemonList" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Stretch="Fill" Tapped="Map_Tapped"/>
-        <uControl:DirectionalCross VerticalAlignment="Top" Margin="10,0,0,10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground" Tapped="DirectionalCross_Tapped"/>
+        <RelativePanel Margin="10,0,0,10" Padding="10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground" Width="160" Height="160">
+            <uControl:DirectionalCross x:Name="ButtonMoveTop" Tapped="DirectionalCross_Tapped" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+            <uControl:DirectionalCross x:Name="ButtonMoveLeft" Tapped="DirectionalCross_Tapped" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RenderTransformOrigin="0.5,0.5">
+                <uControl:DirectionalCross.RenderTransform>
+                    <CompositeTransform Rotation="270"/>
+                </uControl:DirectionalCross.RenderTransform>
+            </uControl:DirectionalCross>
+            <uControl:DirectionalCross x:Name="ButtonMoveRight" Tapped="DirectionalCross_Tapped" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RenderTransformOrigin="0.5,0.5">
+                <uControl:DirectionalCross.RenderTransform>
+                    <CompositeTransform Rotation="90"/>
+                </uControl:DirectionalCross.RenderTransform>
+            </uControl:DirectionalCross>
+            <uControl:DirectionalCross x:Name="ButtonMoveBottom" Tapped="DirectionalCross_Tapped" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RenderTransformOrigin="0.5,0.5">
+                <uControl:DirectionalCross.RenderTransform>
+                    <CompositeTransform Rotation="180"/>
+                </uControl:DirectionalCross.RenderTransform>
+            </uControl:DirectionalCross>
+        </RelativePanel>
         <uControl:ActionButton RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignRightWith="MainBackground" Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <uControl:MenuButton x:Name="menuButton" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="40" Height="80" Tapped="MenuButton_Click"/>
         <uControl:MenuPanel Visibility="Collapsed" x:Name="menuPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
