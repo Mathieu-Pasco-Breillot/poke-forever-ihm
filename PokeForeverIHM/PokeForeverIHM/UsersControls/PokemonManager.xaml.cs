@@ -50,7 +50,7 @@ namespace PokeForeverIHM.UsersControls
 						Pokemons.Insert(pokemonToSwitchIn, pokemonTempOut);
 						Pokemons.Insert(pokemonToSwitchOut, pokemonTempIn);
 					}
-
+					ChangeActivePokemons();
 					pokemonToSwitchIn = -1;
 					pokemonToSwitchOut = -1;
 				}
@@ -63,7 +63,7 @@ namespace PokeForeverIHM.UsersControls
 			foreach (StackPanel stp in HelperFunctions.FindVisualChildren<StackPanel>(PokeListView))
 			{
 				//StackPanel stp = dt.ToString();
-				if (counterLVI > 0  && counterLVI <= 6)
+				if (counterLVI > 0 && counterLVI <= 6)
 				{
 					stp.Background = HelperFunctions.GetColorFromHexa("#7FE07C29");
 				}

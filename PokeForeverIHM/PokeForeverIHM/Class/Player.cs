@@ -1,6 +1,4 @@
-﻿using System;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
+﻿using Windows.UI.Xaml.Media;
 
 namespace PokeForeverIHM.Class
 {

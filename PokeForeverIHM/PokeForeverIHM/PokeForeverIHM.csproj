@@ -135,25 +135,24 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\250px-Barbicha-RS.png" />
-    <Content Include="Assets\250px-Brouhabam-RS.png" />
-    <Content Include="Assets\250px-Camérupt-RS.png" />
-    <Content Include="Assets\250px-Groret-RS.png" />
-    <Content Include="Assets\250px-Milobellus-RS.png" />
-    <Content Include="Assets\250px-Morphéo-RS.png" />
-    <Content Include="Assets\250px-Pingoléon-DP.png" />
-    <Content Include="Assets\250px-Tortipouss-Pt.png" />
-    <Content Include="Assets\773px-Florizarre-RFVF.png" />
-    <Content Include="Assets\FloralCity.png" />
-    <Content Include="Assets\PKMN-Unova-Map.jpg" />
+    <Content Include="Assets\Pokemons\Barbicha.png" />
+    <Content Include="Assets\Pokemons\Brouhabam.png" />
+    <Content Include="Assets\Pokemons\Camerupt.png" />
+    <Content Include="Assets\Pokemons\Groret.png" />
+    <Content Include="Assets\Pokemons\Milobellus.png" />
+    <Content Include="Assets\Pokemons\Morpheo.png" />
+    <Content Include="Assets\Pokemons\Pingoleon.png" />
+    <Content Include="Assets\Pokemons\Tortipouss.png" />
+    <Content Include="Assets\Backgrounds\FloralCity.png" />
+    <Content Include="Assets\Backgrounds\PKMN-Unova-Map.jpg" />
     <Content Include="Assets\Pokemons\Bulbizarre.png" />
     <Content Include="Assets\Pokemons\Dracaufeu.png" />
     <Content Include="Assets\Pokemons\Florizarre.png" />
     <Content Include="Assets\Pokemons\Herbizarre.png" />
     <Content Include="Assets\Pokemons\Reptincel.png" />
-    <Content Include="Assets\Pokemons\Salamèche.png" />
-    <Content Include="Assets\Pokémon.jpg" />
-    <Content Include="Assets\red-wall-red-pokemon-32627031-1280-887.jpg" />
+    <Content Include="Assets\Pokemons\Salameche.png" />
+    <Content Include="Assets\Backgrounds\Pokémon.jpg" />
+    <Content Include="Assets\Backgrounds\red-wall-red-pokemon-32627031-1280-887.jpg" />
     <Content Include="Assets\Types\bug.png" />
     <Content Include="Assets\Types\dark.png" />
     <Content Include="Assets\Types\dragon.png" />

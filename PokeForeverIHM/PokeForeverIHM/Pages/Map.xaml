@@ -16,7 +16,7 @@
         <uControl:MenuPanel Grid.Column="1"/>
         <Grid HorizontalAlignment="Stretch" Grid.Column="0">
             <Grid.Background>
-                <ImageBrush ImageSource="ms-appx:///Assets/PKMN-Unova-Map.jpg"/>
+                <ImageBrush ImageSource="ms-appx:///Assets/Backgrounds/PKMN-Unova-Map.jpg"/>
             </Grid.Background>
         </Grid>
     </Grid>
