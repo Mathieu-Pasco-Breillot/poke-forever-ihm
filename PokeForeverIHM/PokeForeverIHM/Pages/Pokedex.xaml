@@ -15,7 +15,7 @@
         <Pivot x:Name="PokePivot" ItemsSource="{Binding}" Background="Black">
             <Pivot.HeaderTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel Width="100%" HorizontalAlignment="Stretch">
                         <TextBlock Text="{Binding Name}" Foreground="White" FontWeight="Bold" FontSize="12"/>
                         <TextBlock Text="{Binding Level}" Foreground="White" FontSize="12"/>
                     </StackPanel>
@@ -30,11 +30,11 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
-                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="80%"/>
                         </Grid.RowDefinitions>
-                        <Image Source="{Binding GetImageType}" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <Image Source="{Binding GetImageType}" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                         <Image Source="{Binding GetImage}" Grid.ColumnSpan="2"/>
-                        <TextBlock Text="{Binding Abstract}" Foreground="White" FontSize="12"  HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="WrapWholeWords"/>
+                        <TextBlock Text="{Binding Abstract}" Margin="10,0,0,0" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="WrapWholeWords"/>
                     </Grid>
                 </DataTemplate>
             </Pivot.ItemTemplate>

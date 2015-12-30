@@ -10,7 +10,7 @@
     x:Name="gamePage">
 
     <RelativePanel Background="Black" Margin="0" Padding="0">
-        <uControl:PokemonManager x:Name="PokemonList" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Height="100"/>
+        <uControl:PokemonManager x:Name="PokemonList" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Height="80"/>
         <Image x:Name="MainBackground" Source="ms-appx:///Assets/Backgrounds/FloralCity.png" Margin="0" RelativePanel.Below="PokemonList" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Stretch="Fill" Tapped="Map_Tapped"/>
         <RelativePanel Margin="10,0,0,10" Padding="10" RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignLeftWith="MainBackground" Width="160" Height="160">
             <uControl:DirectionalCross x:Name="ButtonMoveTop" Tapped="DirectionalCross_Tapped" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>

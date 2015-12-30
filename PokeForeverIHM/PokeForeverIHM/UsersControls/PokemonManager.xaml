@@ -7,7 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="120" Loaded="PokeManager_Loaded">
+    d:DesignHeight="80" Loaded="PokeManager_Loaded">
 
     <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible" VerticalScrollMode="Disabled" VerticalScrollBarVisibility="Hidden">
         <ListView
@@ -16,14 +16,14 @@
             AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="PokeListview_SelectionChanged" DragItemsCompleted="PokeListView_DragItemsCompleted">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" Background="Black"/>
+                    <StackPanel Orientation="Horizontal" Height="70" Background="Black"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel CanDrag="False" HorizontalAlignment="Center" Padding="0,10,0,0" Margin="5" Background="#7FE07C29" CornerRadius="5" Height="80" Width="80">
-                        <Image Source="{Binding GetImage}" Height="50" MinWidth="70" VerticalAlignment="Top"/>
-                        <TextBlock Text="{Binding Level}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="14"/>
+                    <StackPanel Padding="0,5,0,5" CanDrag="False" HorizontalAlignment="Center" Margin="0" Background="#7FE07C29" CornerRadius="5" Height="70" Width="70">
+                        <Image Source="{Binding GetImage}" Height="45" VerticalAlignment="Top"/>
+                        <TextBlock Text="{Binding Level}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="11"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
