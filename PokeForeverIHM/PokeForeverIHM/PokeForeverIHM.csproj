@@ -100,6 +100,9 @@
     <Compile Include="Class\Player.cs" />
     <Compile Include="Class\Pokemon.cs" />
     <Compile Include="Class\Types.cs" />
+    <Compile Include="Pages\Backpack.xaml.cs">
+      <DependentUpon>Backpack.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,9 @@
     <Compile Include="Pages\Pokedex.xaml.cs">
       <DependentUpon>Pokedex.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsersControls\CommonObjectManager.xaml.cs">
+      <DependentUpon>CommonObjectManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UsersControls\MenuButton.xaml.cs">
       <DependentUpon>MenuButton.xaml</DependentUpon>
     </Compile>
@@ -125,8 +131,14 @@
       <DependentUpon>SavedGames.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersControls\PokeballManager.xaml.cs">
+      <DependentUpon>PokeballManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UsersControls\PokemonManager.xaml.cs">
       <DependentUpon>PokemonManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\StonesManager.xaml.cs">
+      <DependentUpon>StonesManager.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -330,6 +342,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\Backpack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -350,6 +366,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UsersControls\CommonObjectManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UsersControls\MenuButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -358,11 +378,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UsersControls\PokeballManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UsersControls\PokemonManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UsersControls\MenuPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\StonesManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
