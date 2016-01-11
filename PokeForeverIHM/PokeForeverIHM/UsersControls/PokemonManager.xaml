@@ -13,7 +13,7 @@
         <ListView
             x:Name="PokeListView" ItemsSource="{Binding}" Background="Black" 
             VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="PokeListview_SelectionChanged" DragItemsCompleted="PokeListView_DragItemsCompleted">
+            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="PokeListview_SelectionChangedMerged" DragItemsCompleted="PokeListView_DragItemsCompleted">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" Height="70" Background="Black"/>
@@ -21,7 +21,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Padding="0,5,0,5" CanDrag="False" HorizontalAlignment="Center" Margin="0" Background="#7FE07C29" CornerRadius="5" Height="70" Width="70">
+                    <StackPanel Padding="0,5,0,5" CanDrag="False" HorizontalAlignment="Center" Margin="0" Background="Black" CornerRadius="5" Height="70" Width="70">
                         <Image Source="{Binding GetImage}" Height="45" VerticalAlignment="Top"/>
                         <TextBlock Text="{Binding Level}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="11"/>
                     </StackPanel>

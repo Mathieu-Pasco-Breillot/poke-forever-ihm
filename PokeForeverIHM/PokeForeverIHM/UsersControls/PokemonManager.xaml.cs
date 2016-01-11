@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using PokeForeverIHM.Class;
+using Windows.ApplicationModel.Core;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -50,11 +52,16 @@ namespace PokeForeverIHM.UsersControls
 						Pokemons.Insert(pokemonToSwitchIn, pokemonTempOut);
 						Pokemons.Insert(pokemonToSwitchOut, pokemonTempIn);
 					}
-					ChangeActivePokemons();
 					pokemonToSwitchIn = -1;
 					pokemonToSwitchOut = -1;
 				}
 			}
+		}
+
+		private void PokeListview_SelectionChangedMerged(object sender, SelectionChangedEventArgs e)
+		{
+			PokeListview_SelectionChanged(sender, e);
+			ChangeActivePokemons();
 		}
 
 		private void ChangeActivePokemons()
