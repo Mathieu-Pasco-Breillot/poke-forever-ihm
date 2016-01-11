@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using System.Collections.ObjectModel;
+using PokeForeverIHM.Class;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, voir la page http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,19 +11,47 @@ namespace PokeForeverIHM.UsersControls
 	/// </summary>
 	public sealed partial class PokeballManager : UserControl
 	{
+		private int ballToSwitchOut = -1;
+		private int ballToSwitchIn = -1;
+		private ObservableCollection<Ball> Balls = Ball.GetBalls();
 		public PokeballManager()
 		{
 			this.InitializeComponent();
+			DataContext = Balls;
 		}
 
 		private void PokeballListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
+			if (ballToSwitchIn == -1)
+			{
+				if (ballToSwitchOut == -1)
+				{
+					ballToSwitchOut = PokeballListView.SelectedIndex;
+				}
+				else
+				{
+					ballToSwitchIn = PokeballListView.SelectedIndex;
 
-		}
+					Ball pokemonTempOut = Balls[ballToSwitchOut];
+					Ball pokemonTempIn = Balls[ballToSwitchIn];
 
-		private void PokeballListView_DragItemsCompleted(ListViewBase sender, DragItemsCompletedEventArgs args)
-		{
+					Balls.Remove(pokemonTempOut);
+					Balls.Remove(pokemonTempIn);
 
+					if (ballToSwitchIn > ballToSwitchOut)
+					{
+						Balls.Insert(ballToSwitchOut, pokemonTempIn);
+						Balls.Insert(ballToSwitchIn, pokemonTempOut);
+					}
+					else
+					{
+						Balls.Insert(ballToSwitchIn, pokemonTempOut);
+						Balls.Insert(ballToSwitchOut, pokemonTempIn);
+					}
+					ballToSwitchIn = -1;
+					ballToSwitchOut = -1;
+				}
+			}
 		}
 	}
 }

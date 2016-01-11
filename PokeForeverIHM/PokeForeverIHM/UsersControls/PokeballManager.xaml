@@ -12,7 +12,7 @@
         <ListView
             x:Name="PokeballListView" ItemsSource="{Binding}" Background="Black" 
             VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="PokeballListView_SelectionChanged" DragItemsCompleted="PokeballListView_DragItemsCompleted">
+            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="PokeballListView_SelectionChanged">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" Height="120" Background="Black"/>

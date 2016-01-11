@@ -95,7 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Class\Backpack.cs" />
+    <Compile Include="Class\Ball.cs" />
     <Compile Include="Class\HelperFunctions.cs" />
     <Compile Include="Class\Player.cs" />
     <Compile Include="Class\Pokemon.cs" />

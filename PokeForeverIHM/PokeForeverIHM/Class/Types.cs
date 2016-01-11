@@ -1,6 +1,6 @@
 ﻿namespace PokeForeverIHM.Class
 {
-	public enum Types
+	public enum PokemonType
 	{
 		Steel,
 		Fight,
@@ -20,5 +20,14 @@
 		Ghost,
 		Dark,
 		Flying
+	}
+
+	public enum BallType
+	{
+		Pokeball,
+		SuperBall,
+		HyperBall,
+		MasterBall,
+		SafariBall
 	}
 }

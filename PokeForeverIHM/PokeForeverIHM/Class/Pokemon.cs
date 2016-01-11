@@ -11,7 +11,7 @@ namespace PokeForeverIHM.Class
 		string name;
 		string @abstract;
 		short level;
-		Types type;
+		PokemonType type;
 		ImageSource image, imageType;
 		private static ObservableCollection<Pokemon> pokemons;
 
@@ -54,7 +54,7 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public Types Type
+		public PokemonType Type
 		{
 			get
 			{
@@ -110,7 +110,7 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public Pokemon(string name, short level, Types type, string imageURI, string @abstract = "")
+		public Pokemon(string name, short level, PokemonType type, string imageURI, string @abstract = "")
 		{
 			Name = name;
 			Level = level;
@@ -120,46 +120,46 @@ namespace PokeForeverIHM.Class
 			SetImageType = checkType(type);
 		}
 
-		private string checkType(Types type)
+		private string checkType(PokemonType type)
 		{
 			string result = "";
 			switch (type)
 			{
-				case Types.Bug:
+				case PokemonType.Bug:
 					return result = "ms-appx:///Assets/Types/bug.png";
-				case Types.Dark:
+				case PokemonType.Dark:
 					return result = "ms-appx:///Assets/Types/dark.png";
-				case Types.Dragon:
+				case PokemonType.Dragon:
 					return result = "ms-appx:///Assets/Types/dragon.png";
-				case Types.Electric:
+				case PokemonType.Electric:
 					return result = "ms-appx:///Assets/Types/electric.png";
-				case Types.Fairy:
+				case PokemonType.Fairy:
 					return result = "ms-appx:///Assets/Types/fairy.png";
-				case Types.Fight:
+				case PokemonType.Fight:
 					return result = "ms-appx:///Assets/Types/fight.png";
-				case Types.Fire:
+				case PokemonType.Fire:
 					return result = "ms-appx:///Assets/Types/fire.png";
-				case Types.Flying:
+				case PokemonType.Flying:
 					return result = "ms-appx:///Assets/Types/flying.png";
-				case Types.Ghost:
+				case PokemonType.Ghost:
 					return result = "ms-appx:///Assets/Types/ghost.png";
-				case Types.Grass:
+				case PokemonType.Grass:
 					return result = "ms-appx:///Assets/Types/grass.png";
-				case Types.Ground:
+				case PokemonType.Ground:
 					return result = "ms-appx:///Assets/Types/ground.png";
-				case Types.Ice:
+				case PokemonType.Ice:
 					return result = "ms-appx:///Assets/Types/ice.png";
-				case Types.Normal:
+				case PokemonType.Normal:
 					return result = "ms-appx:///Assets/Types/normal.png";
-				case Types.Poison:
+				case PokemonType.Poison:
 					return result = "ms-appx:///Assets/Types/poison.png";
-				case Types.Psychic:
+				case PokemonType.Psychic:
 					return result = "ms-appx:///Assets/Types/psychic.png";
-				case Types.Rock:
+				case PokemonType.Rock:
 					return result = "ms-appx:///Assets/Types/rock.png";
-				case Types.Steel:
+				case PokemonType.Steel:
 					return result = "ms-appx:///Assets/Types/steel.png";
-				case Types.Water:
+				case PokemonType.Water:
 					return result = "ms-appx:///Assets/Types/water.png";
 				default:
 					return result;
@@ -343,7 +343,7 @@ namespace PokeForeverIHM.Class
 
 				foreach (KeyValuePair<string,string> pokemon in names)
 				{
-					Pokemons.Add(new Pokemon(pokemon.Key, (short)level.Next(1, 99), (Types)type.Next(1, 18), $"ms-appx:///Assets/Square44x44Logo.scale-200.png", pokemon.Value));
+					Pokemons.Add(new Pokemon(pokemon.Key, (short)level.Next(1, 99), (PokemonType)type.Next(1, 18), $"ms-appx:///Assets/Square44x44Logo.scale-200.png", pokemon.Value));
 				}
 				//for (int i = 0; i < names.Count; i++)
 				//{
