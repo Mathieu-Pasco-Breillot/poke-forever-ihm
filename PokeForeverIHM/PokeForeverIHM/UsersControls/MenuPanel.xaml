@@ -22,7 +22,7 @@
             <Button x:Name="MapButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="MAP" Foreground="White" BorderBrush="#888" BorderThickness="0,0,0,1" Tapped="MapButton_Tapped"/>
         </Grid>
         <Grid Grid.Row="1">
-            <Button x:Name="StockButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="INVENTAIRE" Foreground="White" BorderBrush="#888" BorderThickness="0,0,0,1"/>
+            <Button x:Name="StockButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="INVENTAIRE" Foreground="White" BorderBrush="#888" BorderThickness="0,0,0,1" Tapped="StockButton_Tapped"/>
         </Grid>
         <Grid Grid.Row="2">
             <Button x:Name="PokeButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="POKEDEX" Foreground="White" BorderBrush="#888" BorderThickness="0,0,0,1" Tapped="PokeButton_Tapped"/>

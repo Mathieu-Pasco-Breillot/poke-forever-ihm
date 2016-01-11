@@ -8,9 +8,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <uControl:PokeballManager/>
-        <uControl:CommonObjectManager/>
-        <uControl:StonesManager/>
-    </StackPanel>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <uControl:PokeballManager Grid.Row="0"/>
+            <uControl:CommonObjectManager Grid.Row="1"/>
+            <uControl:StonesManager Grid.Row="2"/>
+        </Grid>
+        <uControl:MenuPanel Grid.Column="1"/>
+    </Grid>
 </Page>

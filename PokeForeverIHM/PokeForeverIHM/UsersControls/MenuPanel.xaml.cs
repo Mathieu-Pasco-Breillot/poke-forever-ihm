@@ -48,5 +48,10 @@ namespace PokeForeverIHM.UsersControls
 				((Frame)Window.Current.Content).Navigate(typeof(GamePage));
 			}
 		}
+
+		private void StockButton_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			((Frame)Window.Current.Content).Navigate(typeof(Backpack));
+		}
 	}
 }
