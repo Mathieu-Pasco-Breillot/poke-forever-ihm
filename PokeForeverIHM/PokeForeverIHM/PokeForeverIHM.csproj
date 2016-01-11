@@ -311,6 +311,10 @@
     <Content Include="Assets\Pokemons\Tygnon.png" />
     <Content Include="Assets\Pokemons\Voltali.png" />
     <Content Include="Assets\Pokemons\Voltorbe.png" />
+    <Content Include="Assets\Sprites\player_stop_bottom.png" />
+    <Content Include="Assets\Sprites\player_stop_left.png" />
+    <Content Include="Assets\Sprites\player_stop_right.png" />
+    <Content Include="Assets\Sprites\player_stop_top.png" />
     <Content Include="Assets\Types\bug.png" />
     <Content Include="Assets\Types\dark.png" />
     <Content Include="Assets\Types\dragon.png" />
