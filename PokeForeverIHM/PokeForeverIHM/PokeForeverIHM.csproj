@@ -147,6 +147,18 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Player\player_left_foot_bottom.png" />
+    <Content Include="Assets\Player\player_left_foot_left.png" />
+    <Content Include="Assets\Player\player_left_foot_right.png" />
+    <Content Include="Assets\Player\player_left_foot_top.png" />
+    <Content Include="Assets\Player\player_right_foot_bottom.png" />
+    <Content Include="Assets\Player\player_right_foot_left.png" />
+    <Content Include="Assets\Player\player_right_foot_right.png" />
+    <Content Include="Assets\Player\player_right_foot_top.png" />
+    <Content Include="Assets\Player\player_stop_bottom.png" />
+    <Content Include="Assets\Player\player_stop_left.png" />
+    <Content Include="Assets\Player\player_stop_right.png" />
+    <Content Include="Assets\Player\player_stop_top.png" />
     <Content Include="Assets\Pokemons\Abo.png" />
     <Content Include="Assets\Pokemons\Abra.png" />
     <Content Include="Assets\Pokemons\Aeromite.png" />

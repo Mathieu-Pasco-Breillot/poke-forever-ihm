@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Media;
+﻿using System;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace PokeForeverIHM.Class
 {
@@ -40,6 +42,14 @@ namespace PokeForeverIHM.Class
 			get
 			{
 				return image;
+			}
+		}
+
+		public string SetImage
+		{
+			set
+			{
+				image = new BitmapImage(new Uri(value));
 			}
 		}
 	}
