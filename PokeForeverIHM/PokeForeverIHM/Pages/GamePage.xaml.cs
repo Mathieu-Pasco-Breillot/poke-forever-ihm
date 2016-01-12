@@ -20,6 +20,7 @@ namespace PokeForeverIHM
 		public GamePage()
 		{
 			InitializeComponent();
+			Character.DataContext = player;
 		}
 
 		private void MenuButton_Click(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
@@ -38,7 +39,7 @@ namespace PokeForeverIHM
 			menuPanel.Visibility = Visibility.Collapsed;
 			
 			// Cast the sender to a button to retrieve its name
-			Button btn = (Button)sender;
+			DirectionalCross btn = (DirectionalCross)sender;
 			switch (btn.Name)
 			{
 				case "ButtonMoveTop":

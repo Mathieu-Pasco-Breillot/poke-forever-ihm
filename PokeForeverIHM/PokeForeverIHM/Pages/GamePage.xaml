@@ -31,7 +31,7 @@
             </uControl:DirectionalCross>
         </RelativePanel>
         <RelativePanel Height="25" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-            <Image x:Name="Character" Source="ms-appx:///Assets/Sprites/player_stop_top.png"></Image>
+            <Image x:Name="Character" Height="25" Width="25" DataContext="{Binding}" Source="{Binding GetImage}" Margin="350,190,0,0" Canvas.ZIndex="9"/>
         </RelativePanel>
         <uControl:ActionButton RelativePanel.AlignBottomWith="MainBackground" RelativePanel.AlignRightWith="MainBackground" Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <uControl:MenuButton x:Name="menuButton" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="40" Height="80" Tapped="MenuButton_Click"/>
