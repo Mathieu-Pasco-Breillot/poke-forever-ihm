@@ -84,6 +84,15 @@ namespace PokeForeverIHM.Class
 		{
 			get
 			{
+				if (balls == null)
+				{
+					balls = new ObservableCollection<Ball>();
+					balls.Add(new Ball(BallType.Pokeball));
+					balls.Add(new Ball(BallType.SuperBall));
+					balls.Add(new Ball(BallType.HyperBall));
+					balls.Add(new Ball(BallType.MasterBall));
+					balls.Add(new Ball(BallType.SafariBall));
+				}
 				return balls;
 			}
 
@@ -122,18 +131,5 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public static ObservableCollection<Ball> GetBalls()
-		{
-			if (Balls == null)
-			{
-				Balls = new ObservableCollection<Ball>();
-				Balls.Add(new Ball(BallType.Pokeball));
-				Balls.Add(new Ball(BallType.SuperBall));
-				Balls.Add(new Ball(BallType.HyperBall));
-				Balls.Add(new Ball(BallType.MasterBall));
-				Balls.Add(new Ball(BallType.SafariBall));
-			}
-			return Balls;
-		}
 	}
 }

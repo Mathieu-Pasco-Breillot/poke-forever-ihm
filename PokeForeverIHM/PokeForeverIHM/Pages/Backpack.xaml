@@ -19,7 +19,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <uControl:PokeballManager Grid.Row="0"/>
+            <uControl:BallManager Grid.Row="0"/>
             <uControl:CommonObjectManager Grid.Row="1"/>
             <uControl:StonesManager Grid.Row="2"/>
         </Grid>

@@ -9,12 +9,12 @@ namespace PokeForeverIHM.UsersControls
 	/// <summary>
 	/// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
 	/// </summary>
-	public sealed partial class PokeballManager : UserControl
+	public sealed partial class BallManager : UserControl
 	{
 		private int ballToSwitchOut = -1;
 		private int ballToSwitchIn = -1;
-		private ObservableCollection<Ball> Balls = Ball.GetBalls();
-		public PokeballManager()
+		private ObservableCollection<Ball> Balls = Ball.Balls;
+		public BallManager()
 		{
 			this.InitializeComponent();
 			DataContext = Balls;
