@@ -17,7 +17,7 @@ namespace PokeForeverIHM.UsersControls
 	{
 		private int pokemonToSwitchOut = -1;
 		private int pokemonToSwitchIn = -1;
-		private ObservableCollection<Pokemon> Pokemons = Pokemon.GetPokemons();
+		private ObservableCollection<Pokemon> Pokemons = Pokemon.Pokemons;
 		public PokemonManager()
 		{
 			InitializeComponent();
