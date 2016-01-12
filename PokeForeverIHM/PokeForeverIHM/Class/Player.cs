@@ -10,7 +10,10 @@ namespace PokeForeverIHM.Class
 		private string name;
 		ImageSource image;
 
-		private Player() { }
+		private Player()
+		{
+			SetImage = $"ms-appx:///Assets/Player/player_stop_bottom.png";
+		}
 
 		public static Player Instance
 		{
