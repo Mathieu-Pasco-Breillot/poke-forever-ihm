@@ -109,24 +109,24 @@ namespace PokeForeverIHM.Class
 				case BallType.Pokeball:
 					PowerCapture = 1;
 					LvlMax = 33;
-					SetImage = "ms-appx:///Assets/Balls/pokeball.png";
+					SetImage = "ms-appx:///Assets/Balls/PokeBall.png";
 					break;
 				case BallType.SuperBall:
 					PowerCapture = 2;
 					LvlMax = 66;
-					SetImage = "ms-appx:///Assets/Balls/superball.png";
+					SetImage = "ms-appx:///Assets/Balls/SuperBall.png";
 					break;
 				case BallType.HyperBall:
 					PowerCapture = 3;
-					SetImage = "ms-appx:///Assets/Balls/hyperball.png";
+					SetImage = "ms-appx:///Assets/Balls/HyperBall.png";
 					break;
 				case BallType.MasterBall:
 					PowerCapture = 1000;
-					SetImage = "ms-appx:///Assets/Balls/masterball.png";
+					SetImage = "ms-appx:///Assets/Balls/MasterBall.png";
 					break;
 				case BallType.SafariBall:
 					PowerCapture = 1;
-					SetImage = "ms-appx:///Assets/Balls/safariball.png";
+					SetImage = "ms-appx:///Assets/Balls/SafariBall.png";
 					break;
 			}
 		}
