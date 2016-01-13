@@ -147,6 +147,16 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Balls\HyperBall.png" />
+    <Content Include="Assets\Balls\MasterBall.png" />
+    <Content Include="Assets\Balls\PokeBall.png" />
+    <Content Include="Assets\Balls\SafariBall.png" />
+    <Content Include="Assets\Balls\SuperBall.png" />
+    <Content Include="Assets\Objects\Antidote.png" />
+    <Content Include="Assets\Objects\FishingRod.png" />
+    <Content Include="Assets\Objects\Pokebike.png" />
+    <Content Include="Assets\Objects\Pokeflute.png" />
+    <Content Include="Assets\Objects\Potion.png" />
     <Content Include="Assets\Player\player_left_foot_bottom.png" />
     <Content Include="Assets\Player\player_left_foot_left.png" />
     <Content Include="Assets\Player\player_left_foot_right.png" />
@@ -323,6 +333,16 @@
     <Content Include="Assets\Pokemons\Tygnon.png" />
     <Content Include="Assets\Pokemons\Voltali.png" />
     <Content Include="Assets\Pokemons\Voltorbe.png" />
+    <Content Include="Assets\Stones\DawnStone.png" />
+    <Content Include="Assets\Stones\DuskStone.png" />
+    <Content Include="Assets\Stones\EverStone.png" />
+    <Content Include="Assets\Stones\FireStone.png" />
+    <Content Include="Assets\Stones\LeafSton.png" />
+    <Content Include="Assets\Stones\MoonStone.png" />
+    <Content Include="Assets\Stones\ShinyStone.png" />
+    <Content Include="Assets\Stones\SunStone.png" />
+    <Content Include="Assets\Stones\ThunderStone.png" />
+    <Content Include="Assets\Stones\WaterStone.png" />
     <Content Include="Assets\Types\bug.png" />
     <Content Include="Assets\Types\dark.png" />
     <Content Include="Assets\Types\dragon.png" />
