@@ -117,7 +117,7 @@ namespace PokeForeverIHM.Class
 					SetImage = "ms-appx:///Assets/Balls/SuperBall.png";
 					break;
 				case BallType.HyperBall:
-					PowerCapture = 3;
+					PowerCapture = 4;
 					SetImage = "ms-appx:///Assets/Balls/HyperBall.png";
 					break;
 				case BallType.MasterBall:
