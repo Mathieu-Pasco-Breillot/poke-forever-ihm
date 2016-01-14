@@ -13,6 +13,7 @@ namespace PokeForeverIHM
 {
 	public sealed partial class GamePage : Page
 	{
+		private const double deltaDisplacement = 10D;
 		TranslateTransform MenuPanelTranslate = new TranslateTransform();
 		Player player = Player.Instance;
 		private bool isLeftFoot = false;
@@ -21,6 +22,17 @@ namespace PokeForeverIHM
 		{
 			InitializeComponent();
 			Character.DataContext = player;
+			Window.Current.Content.KeyDown += Arrow_KeyDown;
+			TabIndex = 2;
+			for (int i = 0; i < 48; i++)
+			{
+				GridMap.ColumnDefinitions.Add(new ColumnDefinition());
+			}
+			for (int i = 0; i < 27; i++)
+			{
+				GridMap.RowDefinitions.Add(new RowDefinition());
+			}
+			Character.Source = player.ImageStopDown;
 		}
 
 		private void MenuButton_Click(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
@@ -33,66 +45,121 @@ namespace PokeForeverIHM
 			menuPanel.Visibility = Visibility.Collapsed;
 		}
 
-		private void DirectionalCross_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+		private void ChangeAssets(object sender)
 		{
 			// Used to close the menu panel
 			menuPanel.Visibility = Visibility.Collapsed;
-			
-			// Cast the sender to a button to retrieve its name
+			// Cast the sender to a DirectionalCross to retrieve its name
 			DirectionalCross btn = (DirectionalCross)sender;
 			switch (btn.Name)
 			{
 				case "ButtonMoveTop":
-					if (isLeftFoot)
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_right_foot_top.png";
-						isLeftFoot = false;
-					}
-					else
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_left_foot_top.png";
-						isLeftFoot = true;
-					}
+					MoveUp();
 					break;
 				case "ButtonMoveBottom":
-					if (isLeftFoot)
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_right_foot_bottom.png";
-						isLeftFoot = false;
-					}
-					else
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_left_foot_bottom.png";
-						isLeftFoot = true;
-					}
+					MoveDown();
 					break;
 				case "ButtonMoveLeft":
-					if (isLeftFoot)
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_right_foot_left.png";
-						isLeftFoot = false;
-					}
-					else
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_left_foot_left.png";
-						isLeftFoot = true;
-					}
+					MoveLeft();
 					break;
 				case "ButtonMoveRight":
-					if (isLeftFoot)
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_right_foot_right.png";
-						isLeftFoot = false;
-					}
-					else
-					{
-						player.SetImage = $"ms-appx:///Assets/Player/player_left_foot_right.png";
-						isLeftFoot = true;
-					}
+					MoveRight();
 					break;
 			}
+		}
 
-			
+		private void DirectionalCross_Holding(object sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
+		{
+			ChangeAssets(sender);
+		}
+
+		private void Arrow_KeyDown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+		{
+			Task.Delay(10).Wait();
+			switch (e.Key)
+			{
+				case Windows.System.VirtualKey.Up:
+					MoveUp();
+					break;
+				case Windows.System.VirtualKey.Down:
+					MoveDown();
+					break;
+				case Windows.System.VirtualKey.Left:
+					MoveLeft();
+					break;
+				case Windows.System.VirtualKey.Right:
+					MoveRight();
+					break;
+			}
+		}
+
+		private void MoveUp()
+		{
+			Thickness displacementUp = new Thickness(Character.Margin.Left, Character.Margin.Top - deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom);
+			if (isLeftFoot)
+			{
+				Character.Source = player.ImageMoveUpRightFoot;
+				isLeftFoot = false;
+			}
+			else
+			{
+				Character.Source = player.ImageMoveUpLeftFoot;
+				isLeftFoot = true;
+			}
+			Character.Margin = displacementUp;
+		}
+
+		private void MoveDown()
+		{
+			Thickness displacementDown = new Thickness(Character.Margin.Left, Character.Margin.Top + deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom);
+			if (isLeftFoot)
+			{
+				Character.Source = player.ImageMoveDownRightFoot;
+				isLeftFoot = false;
+			}
+			else
+			{
+				Character.Source = player.ImageMoveDownLeftFoot;
+				isLeftFoot = true;
+			}
+			Character.Margin = displacementDown;
+		}
+
+		private void MoveLeft()
+		{
+			Thickness displacementLeft = new Thickness(Character.Margin.Left - deltaDisplacement, Character.Margin.Top, Character.Margin.Right, Character.Margin.Bottom);
+			if (isLeftFoot)
+			{
+				Character.Source = player.ImageMoveLeftRightFoot;
+				isLeftFoot = false;
+			}
+			else
+			{
+				Character.Source = player.ImageMoveLeftLeftFoot;
+				isLeftFoot = true;
+			}
+			Character.Margin = displacementLeft;
+		}
+
+		private void MoveRight()
+		{
+			Thickness displacementRight = new Thickness(Character.Margin.Left + deltaDisplacement, Character.Margin.Top, Character.Margin.Right, Character.Margin.Bottom);
+			if (isLeftFoot)
+			{
+				Character.Source = player.ImageMoveRightRightFoot;
+				isLeftFoot = false;
+			}
+			else
+			{
+				Character.Source = player.ImageMoveRightLeftFoot;
+				isLeftFoot = true;
+			}
+			Character.Margin = displacementRight;
+		}
+
+		private void DirectionalCross_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+		{
+			ChangeAssets(sender);
 		}
 	}
 }
