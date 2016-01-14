@@ -13,7 +13,7 @@
         <ListView
             x:Name="StonesListView" ItemsSource="{Binding}" Background="Black" 
             VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="StonesListView_SelectionChanged" DragItemsCompleted="StonesListView_DragItemsCompleted">
+            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="StonesListView_SelectionChanged">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" Height="120" Background="Black"/>

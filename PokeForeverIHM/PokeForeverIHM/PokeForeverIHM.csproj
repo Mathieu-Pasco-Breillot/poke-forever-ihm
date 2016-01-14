@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class\Stone.cs" />
     <Compile Include="Class\Ball.cs" />
     <Compile Include="Class\HelperFunctions.cs" />
     <Compile Include="Class\Player.cs" />
@@ -337,7 +338,7 @@
     <Content Include="Assets\Stones\DuskStone.png" />
     <Content Include="Assets\Stones\EverStone.png" />
     <Content Include="Assets\Stones\FireStone.png" />
-    <Content Include="Assets\Stones\LeafSton.png" />
+    <Content Include="Assets\Stones\LeafStone.png" />
     <Content Include="Assets\Stones\MoonStone.png" />
     <Content Include="Assets\Stones\ShinyStone.png" />
     <Content Include="Assets\Stones\SunStone.png" />
