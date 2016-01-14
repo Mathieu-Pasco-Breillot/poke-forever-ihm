@@ -19,9 +19,9 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <uControl:BallManager Grid.Row="0"/>
-            <uControl:CommonObjectManager Grid.Row="1"/>
-            <uControl:StonesManager Grid.Row="2"/>
+            <uControl:BallManager x:Name="BallsList" Grid.Row="0"/>
+            <uControl:CommonObjectManager x:Name="CommonsList" Grid.Row="1"/>
+            <uControl:StonesManager x:Name="StonesList" Grid.Row="2"/>
         </Grid>
         <uControl:MenuPanel Grid.Column="1"/>
     </Grid>
