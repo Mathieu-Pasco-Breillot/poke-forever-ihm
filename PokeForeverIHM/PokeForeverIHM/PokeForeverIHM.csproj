@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Backgrounds\map.png" />
+    <Content Include="Assets\Backgrounds\underMap.png" />
     <Content Include="Assets\Balls\HyperBall.png" />
     <Content Include="Assets\Balls\MasterBall.png" />
     <Content Include="Assets\Balls\PokeBall.png" />
