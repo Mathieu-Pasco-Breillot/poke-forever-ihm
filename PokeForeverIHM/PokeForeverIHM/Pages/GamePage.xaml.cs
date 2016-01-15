@@ -96,18 +96,22 @@ namespace PokeForeverIHM
 			Task.Delay(10).Wait();
 			switch (e.Key)
 			{
+				case VirtualKey.GamepadLeftThumbstickUp:
 				case VirtualKey.Up:
 					MoveUp();
 					lastArrowKeyTriggered = VirtualKey.Up;
 					break;
+				case VirtualKey.GamepadLeftThumbstickDown:
 				case VirtualKey.Down:
 					MoveDown();
 					lastArrowKeyTriggered = VirtualKey.Down;
 					break;
+				case VirtualKey.GamepadLeftThumbstickLeft:
 				case VirtualKey.Left:
 					MoveLeft();
 					lastArrowKeyTriggered = VirtualKey.Left;
 					break;
+				case VirtualKey.GamepadLeftThumbstickRight:
 				case VirtualKey.Right:
 					MoveRight();
 					lastArrowKeyTriggered = VirtualKey.Right;
