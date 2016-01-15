@@ -8,34 +8,37 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using PokeForeverIHM.Class;
+using Windows.UI.Xaml.Input;
+using Windows.System;
 
 namespace PokeForeverIHM
 {
 	public sealed partial class GamePage : Page
 	{
-		private const double deltaDisplacement = 10D;
+		private const double deltaDisplacement = 20D;
 		TranslateTransform MenuPanelTranslate = new TranslateTransform();
 		Player player = Player.Instance;
 		private bool isLeftFoot = false;
+		private VirtualKey lastArrowKeyTriggered;
 
 		public GamePage()
 		{
 			InitializeComponent();
 			Character.DataContext = player;
 			Window.Current.Content.KeyDown += Arrow_KeyDown;
-			TabIndex = 2;
-			for (int i = 0; i < 48; i++)
-			{
-				GridMap.ColumnDefinitions.Add(new ColumnDefinition());
-			}
-			for (int i = 0; i < 27; i++)
-			{
-				GridMap.RowDefinitions.Add(new RowDefinition());
-			}
+			Window.Current.Content.KeyUp += Arrow_KeyUp;
+			//for (int i = 0; i < 48; i++)
+			//{
+			//	GridMap.ColumnDefinitions.Add(new ColumnDefinition());
+			//}
+			//for (int i = 0; i < 27; i++)
+			//{
+			//	GridMap.RowDefinitions.Add(new RowDefinition());
+			//}
 			Character.Source = player.ImageStopDown;
 		}
 
-		private void MenuButton_Click(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+		private void MenuButton_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
 		{
 			menuPanel.Visibility = Visibility.Visible;
 		}
@@ -45,6 +48,7 @@ namespace PokeForeverIHM
 			menuPanel.Visibility = Visibility.Collapsed;
 		}
 
+		#region KeyboardMoves
 		private void ChangeAssets(object sender)
 		{
 			// Used to close the menu panel
@@ -68,9 +72,23 @@ namespace PokeForeverIHM
 			}
 		}
 
-		private void DirectionalCross_Holding(object sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
+		private void Arrow_KeyUp(object sender, KeyRoutedEventArgs e)
 		{
-			ChangeAssets(sender);
+			switch (lastArrowKeyTriggered)
+			{
+				case VirtualKey.Up:
+					Character.Source = player.ImageStopUp;
+					break;
+				case VirtualKey.Down:
+					Character.Source = player.ImageStopDown;
+					break;
+				case VirtualKey.Left:
+					Character.Source = player.ImageStopLeft;
+					break;
+				case VirtualKey.Right:
+					Character.Source = player.ImageStopRight;
+					break;
+			}
 		}
 
 		private void Arrow_KeyDown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
@@ -78,24 +96,27 @@ namespace PokeForeverIHM
 			Task.Delay(10).Wait();
 			switch (e.Key)
 			{
-				case Windows.System.VirtualKey.Up:
+				case VirtualKey.Up:
 					MoveUp();
+					lastArrowKeyTriggered = VirtualKey.Up;
 					break;
-				case Windows.System.VirtualKey.Down:
+				case VirtualKey.Down:
 					MoveDown();
+					lastArrowKeyTriggered = VirtualKey.Down;
 					break;
-				case Windows.System.VirtualKey.Left:
+				case VirtualKey.Left:
 					MoveLeft();
+					lastArrowKeyTriggered = VirtualKey.Left;
 					break;
-				case Windows.System.VirtualKey.Right:
+				case VirtualKey.Right:
 					MoveRight();
+					lastArrowKeyTriggered = VirtualKey.Right;
 					break;
 			}
 		}
 
 		private void MoveUp()
 		{
-			Thickness displacementUp = new Thickness(Character.Margin.Left, Character.Margin.Top - deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom);
 			if (isLeftFoot)
 			{
 				Character.Source = player.ImageMoveUpRightFoot;
@@ -106,12 +127,21 @@ namespace PokeForeverIHM
 				Character.Source = player.ImageMoveUpLeftFoot;
 				isLeftFoot = true;
 			}
-			Character.Margin = displacementUp;
+			if (GridMap.Margin.Top < -1500)
+			{
+				GridMap.Margin = new Thickness(GridMap.Margin.Left, GridMap.Margin.Top + deltaDisplacement, GridMap.Margin.Right, GridMap.Margin.Bottom - deltaDisplacement);
+			}
+			else
+			{
+				if (Character.Margin.Top > -(Window.Current.Bounds.Height / 2) + Character.Height + 24)
+				{
+					Character.Margin = new Thickness(Character.Margin.Left, Character.Margin.Top - deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom + deltaDisplacement); 
+				}
+			}
 		}
 
 		private void MoveDown()
 		{
-			Thickness displacementDown = new Thickness(Character.Margin.Left, Character.Margin.Top + deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom);
 			if (isLeftFoot)
 			{
 				Character.Source = player.ImageMoveDownRightFoot;
@@ -122,12 +152,21 @@ namespace PokeForeverIHM
 				Character.Source = player.ImageMoveDownLeftFoot;
 				isLeftFoot = true;
 			}
-			Character.Margin = displacementDown;
+			if (GridMap.Margin.Bottom < -1580D)
+			{
+				GridMap.Margin = new Thickness(GridMap.Margin.Left, GridMap.Margin.Top - deltaDisplacement, GridMap.Margin.Right, GridMap.Margin.Bottom + deltaDisplacement);
+			}
+			else
+			{
+				if (Character.Margin.Bottom > -(Window.Current.Bounds.Height / 2) + Character.Height + 24)
+				{
+					Character.Margin = new Thickness(Character.Margin.Left, Character.Margin.Top + deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom - deltaDisplacement);
+				}
+			}
 		}
 
 		private void MoveLeft()
 		{
-			Thickness displacementLeft = new Thickness(Character.Margin.Left - deltaDisplacement, Character.Margin.Top, Character.Margin.Right, Character.Margin.Bottom);
 			if (isLeftFoot)
 			{
 				Character.Source = player.ImageMoveLeftRightFoot;
@@ -138,12 +177,21 @@ namespace PokeForeverIHM
 				Character.Source = player.ImageMoveLeftLeftFoot;
 				isLeftFoot = true;
 			}
-			Character.Margin = displacementLeft;
+			if (GridMap.Margin.Left < -2880D)
+			{
+				GridMap.Margin = new Thickness(GridMap.Margin.Left + deltaDisplacement, GridMap.Margin.Top, GridMap.Margin.Right - deltaDisplacement, GridMap.Margin.Bottom);
+			}
+			else
+			{
+				if (Character.Margin.Left > -(Window.Current.Bounds.Width / 2) + (Character.Width / 2))
+				{
+					Character.Margin = new Thickness(Character.Margin.Left - deltaDisplacement, Character.Margin.Top, Character.Margin.Right + deltaDisplacement, Character.Margin.Bottom);
+				}
+			}
 		}
 
 		private void MoveRight()
 		{
-			Thickness displacementRight = new Thickness(Character.Margin.Left + deltaDisplacement, Character.Margin.Top, Character.Margin.Right, Character.Margin.Bottom);
 			if (isLeftFoot)
 			{
 				Character.Source = player.ImageMoveRightRightFoot;
@@ -154,12 +202,32 @@ namespace PokeForeverIHM
 				Character.Source = player.ImageMoveRightLeftFoot;
 				isLeftFoot = true;
 			}
-			Character.Margin = displacementRight;
+			if (GridMap.Margin.Right < -2880D)
+			{
+				GridMap.Margin = new Thickness(GridMap.Margin.Left - deltaDisplacement, GridMap.Margin.Top, GridMap.Margin.Right + deltaDisplacement, GridMap.Margin.Bottom);
+			}
+			else
+			{
+				if (Character.Margin.Right > -(Window.Current.Bounds.Width / 2) + (Character.Width / 2))
+				{
+					Character.Margin = new Thickness(Character.Margin.Left + deltaDisplacement, Character.Margin.Top, Character.Margin.Right - deltaDisplacement, Character.Margin.Bottom);
+				}
+			}
 		}
+		#endregion
 
+		#region FingerMoves
+		private void DirectionalCross_Holding(object sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
+		{
+			ChangeAssets(sender);
+		}
+		#endregion
+
+		#region MouseMoves
 		private void DirectionalCross_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
 		{
 			ChangeAssets(sender);
 		}
+		#endregion
 	}
 }
