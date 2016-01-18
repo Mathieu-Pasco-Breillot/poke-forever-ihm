@@ -20,7 +20,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <uControl:BallManager x:Name="BallsList" Grid.Row="0"/>
-            <uControl:CommonObjectManager x:Name="CommonsList" Grid.Row="1"/>
+            <uControl:ItemManager x:Name="ItemsList" Grid.Row="1"/>
             <uControl:StonesManager x:Name="StonesList" Grid.Row="2"/>
         </Grid>
         <uControl:MenuPanel Grid.Column="1"/>

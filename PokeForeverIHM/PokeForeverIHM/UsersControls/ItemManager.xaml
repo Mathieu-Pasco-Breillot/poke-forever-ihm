@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="PokeForeverIHM.UsersControls.CommonObjectManager"
+    x:Class="PokeForeverIHM.UsersControls.ItemManager"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:PokeForeverIHM.UsersControls"
@@ -11,9 +11,9 @@
 
     <Grid>
         <ListView
-            x:Name="CommonObjectListView" ItemsSource="{Binding}" Background="Black" 
+            x:Name="ItemListView" ItemsSource="{Binding}" Background="Black" 
             VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="CommonObjectListView_SelectionChanged" DragItemsCompleted="CommonObjectListView_DragItemsCompleted">
+            AllowDrop="True" CanDrag="True" CanReorderItems="True" CanDragItems="True" SelectionChanged="ItemListView_SelectionChanged">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" Height="120" Background="Black"/>
