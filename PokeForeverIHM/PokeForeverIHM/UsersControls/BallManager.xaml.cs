@@ -13,7 +13,7 @@ namespace PokeForeverIHM.UsersControls
 	{
 		private int ballToSwitchOut = -1;
 		private int ballToSwitchIn = -1;
-		private ObservableCollection<Ball> balls = Ball.Balls;
+		private ObservableCollection<Ball> balls = Ball.Instance;
 		public BallManager()
 		{
 			this.InitializeComponent();
@@ -32,21 +32,21 @@ namespace PokeForeverIHM.UsersControls
 				{
 					ballToSwitchIn = PokeballListView.SelectedIndex;
 
-					Ball pokemonTempOut = balls[ballToSwitchOut];
-					Ball pokemonTempIn = balls[ballToSwitchIn];
+					Ball ballTempOut = balls[ballToSwitchOut];
+					Ball ballTempIn = balls[ballToSwitchIn];
 
-					balls.Remove(pokemonTempOut);
-					balls.Remove(pokemonTempIn);
+					balls.Remove(ballTempOut);
+					balls.Remove(ballTempIn);
 
 					if (ballToSwitchIn > ballToSwitchOut)
 					{
-						balls.Insert(ballToSwitchOut, pokemonTempIn);
-						balls.Insert(ballToSwitchIn, pokemonTempOut);
+						balls.Insert(ballToSwitchOut, ballTempIn);
+						balls.Insert(ballToSwitchIn, ballTempOut);
 					}
 					else
 					{
-						balls.Insert(ballToSwitchIn, pokemonTempOut);
-						balls.Insert(ballToSwitchOut, pokemonTempIn);
+						balls.Insert(ballToSwitchIn, ballTempOut);
+						balls.Insert(ballToSwitchOut, ballTempIn);
 					}
 					ballToSwitchIn = -1;
 					ballToSwitchOut = -1;

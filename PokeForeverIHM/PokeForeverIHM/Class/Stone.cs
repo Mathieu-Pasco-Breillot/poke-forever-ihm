@@ -12,7 +12,7 @@ namespace PokeForeverIHM.Class
 		private ushort quantity, price;
 		private ImageSource image;
 		private List<PokemonType> types = new List<PokemonType>();
-		private static ObservableCollection<Stone> stones;
+		private static ObservableCollection<Stone> instance;
 
 		public ushort Quantity
 		{
@@ -43,30 +43,25 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public static ObservableCollection<Stone> Stones
+		public static ObservableCollection<Stone> Instance
 		{
 			get
 			{
-				if (stones == null)
+				if (instance == null)
 				{
-					stones = new ObservableCollection<Stone>();
-					stones.Add(new Stone("DawnStone"));
-					stones.Add(new Stone("DuskStone"));
-					stones.Add(new Stone("EverStone"));
-					stones.Add(new Stone("FireStone"));
-					stones.Add(new Stone("LeafStone"));
-					stones.Add(new Stone("MoonStone"));
-					stones.Add(new Stone("ShinyStone"));
-					stones.Add(new Stone("SunStone"));
-					stones.Add(new Stone("ThunderStone"));
-					stones.Add(new Stone("WaterStone"));
+					instance = new ObservableCollection<Stone>();
+					instance.Add(new Stone("DawnStone"));
+					instance.Add(new Stone("DuskStone"));
+					instance.Add(new Stone("EverStone"));
+					instance.Add(new Stone("FireStone"));
+					instance.Add(new Stone("LeafStone"));
+					instance.Add(new Stone("MoonStone"));
+					instance.Add(new Stone("ShinyStone"));
+					instance.Add(new Stone("SunStone"));
+					instance.Add(new Stone("ThunderStone"));
+					instance.Add(new Stone("WaterStone"));
 				}
-				return stones;
-			}
-
-			set
-			{
-				stones = value;
+				return instance;
 			}
 		}
 

@@ -10,7 +10,7 @@ namespace PokeForeverIHM.Class
 		private ushort lvlMin = 1, lvlMax = 99;
 		private ushort powerCapture, quantity;
 		private ImageSource image;
-		private static ObservableCollection<Ball> balls;
+		private static ObservableCollection<Ball> instance;
 
 		public ushort PowerCapture
 		{
@@ -80,25 +80,20 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public static ObservableCollection<Ball> Balls
+		public static ObservableCollection<Ball> Instance
 		{
 			get
 			{
-				if (balls == null)
+				if (instance == null)
 				{
-					balls = new ObservableCollection<Ball>();
-					balls.Add(new Ball(BallType.Pokeball));
-					balls.Add(new Ball(BallType.SuperBall));
-					balls.Add(new Ball(BallType.HyperBall));
-					balls.Add(new Ball(BallType.MasterBall));
-					balls.Add(new Ball(BallType.SafariBall));
+					instance = new ObservableCollection<Ball>();
+					instance.Add(new Ball(BallType.Pokeball));
+					instance.Add(new Ball(BallType.SuperBall));
+					instance.Add(new Ball(BallType.HyperBall));
+					instance.Add(new Ball(BallType.MasterBall));
+					instance.Add(new Ball(BallType.SafariBall));
 				}
-				return balls;
-			}
-
-			set
-			{
-				balls = value;
+				return instance;
 			}
 		}
 

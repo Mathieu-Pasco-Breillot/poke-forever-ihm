@@ -11,9 +11,9 @@ namespace PokeForeverIHM.UsersControls
 	/// </summary>
 	public sealed partial class StonesManager : UserControl
 	{
-		private int ballToSwitchOut = -1;
-		private int ballToSwitchIn = -1;
-		private ObservableCollection<Stone> stones = Stone.Stones;
+		private int stoneToSwitchOut = -1;
+		private int stoneToSwitchIn = -1;
+		private ObservableCollection<Stone> stones = Stone.Instance;
 		public StonesManager()
 		{
 			this.InitializeComponent();
@@ -22,34 +22,34 @@ namespace PokeForeverIHM.UsersControls
 
 		private void StonesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			if (ballToSwitchIn == -1)
+			if (stoneToSwitchIn == -1)
 			{
-				if (ballToSwitchOut == -1)
+				if (stoneToSwitchOut == -1)
 				{
-					ballToSwitchOut = StonesListView.SelectedIndex;
+					stoneToSwitchOut = StonesListView.SelectedIndex;
 				}
 				else
 				{
-					ballToSwitchIn = StonesListView.SelectedIndex;
+					stoneToSwitchIn = StonesListView.SelectedIndex;
 
-					Stone pokemonTempOut = stones[ballToSwitchOut];
-					Stone pokemonTempIn = stones[ballToSwitchIn];
+					Stone stoneTempOut = stones[stoneToSwitchOut];
+					Stone stoneTempIn = stones[stoneToSwitchIn];
 
-					stones.Remove(pokemonTempOut);
-					stones.Remove(pokemonTempIn);
+					stones.Remove(stoneTempOut);
+					stones.Remove(stoneTempIn);
 
-					if (ballToSwitchIn > ballToSwitchOut)
+					if (stoneToSwitchIn > stoneToSwitchOut)
 					{
-						stones.Insert(ballToSwitchOut, pokemonTempIn);
-						stones.Insert(ballToSwitchIn, pokemonTempOut);
+						stones.Insert(stoneToSwitchOut, stoneTempIn);
+						stones.Insert(stoneToSwitchIn, stoneTempOut);
 					}
 					else
 					{
-						stones.Insert(ballToSwitchIn, pokemonTempOut);
-						stones.Insert(ballToSwitchOut, pokemonTempIn);
+						stones.Insert(stoneToSwitchIn, stoneTempOut);
+						stones.Insert(stoneToSwitchOut, stoneTempIn);
 					}
-					ballToSwitchIn = -1;
-					ballToSwitchOut = -1;
+					stoneToSwitchIn = -1;
+					stoneToSwitchOut = -1;
 				}
 			}
 		}

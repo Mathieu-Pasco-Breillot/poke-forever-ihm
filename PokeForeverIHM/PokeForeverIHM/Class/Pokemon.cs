@@ -13,7 +13,7 @@ namespace PokeForeverIHM.Class
 		short level;
 		PokemonType type;
 		ImageSource image, imageType;
-		private static ObservableCollection<Pokemon> pokemons;
+		private static ObservableCollection<Pokemon> instance;
 
 		public string Name
 		{
@@ -97,13 +97,13 @@ namespace PokeForeverIHM.Class
 				return imageType;
 			}
 		}
-		public static ObservableCollection<Pokemon> Pokemons
+		public static ObservableCollection<Pokemon> Instance
 		{
 			get
 			{
-				if (pokemons == null)
+				if (instance == null)
 				{
-					pokemons = new ObservableCollection<Pokemon>();
+					instance = new ObservableCollection<Pokemon>();
 					Random type = new Random();
 					Random level = new Random();
 					#region Create names
@@ -271,23 +271,23 @@ namespace PokeForeverIHM.Class
 
 					foreach (KeyValuePair<string, string> pokemon in names)
 					{
-						pokemons.Add(new Pokemon(pokemon.Key, (short)level.Next(1, 99), (PokemonType)type.Next(1, 18), $"ms-appx:///Assets/Square44x44Logo.scale-200.png", pokemon.Value));
+						instance.Add(new Pokemon(pokemon.Key, (short)level.Next(1, 99), (PokemonType)type.Next(1, 18), $"ms-appx:///Assets/Square44x44Logo.scale-200.png", pokemon.Value));
 					}
 					//for (int i = 0; i < names.Count; i++)
 					//{
 					//	Pokemons.Add(new Pokemon(names[i], (short)level.Next(1, 99), (Types)type.Next(1, 18), $"ms-appx:///Assets/Square44x44Logo.scale-200.png"));
 					//}
-					foreach (Pokemon pokemon in pokemons)
+					foreach (Pokemon pokemon in instance)
 					{
 						createPokemonImageURi(pokemon);
 					}
 				}
-				return pokemons;
+				return instance;
 			}
 
 			set
 			{
-				pokemons = value;
+				instance = value;
 			}
 		}
 
