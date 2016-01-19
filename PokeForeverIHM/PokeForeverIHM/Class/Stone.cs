@@ -65,10 +65,10 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public Stone(string name)
+		public Stone(string name, ushort quantity = 0)
 		{
 			SetImage = $"ms-appx:///Assets/Stones/{name}.png";
-			Quantity = 0;
+			Quantity = quantity;
 		}
 
 	}

@@ -87,17 +87,17 @@ namespace PokeForeverIHM.Class
 				if (instance == null)
 				{
 					instance = new ObservableCollection<Ball>();
-					instance.Add(new Ball(BallType.Pokeball));
+					instance.Add(new Ball(BallType.Pokeball, 15));
 					instance.Add(new Ball(BallType.SuperBall));
 					instance.Add(new Ball(BallType.HyperBall));
 					instance.Add(new Ball(BallType.MasterBall));
-					instance.Add(new Ball(BallType.SafariBall));
+					instance.Add(new Ball(BallType.SafariBall, 100));
 				}
 				return instance;
 			}
 		}
 
-		public Ball(BallType type)
+		public Ball(BallType type, ushort quantity = 0)
 		{
 			switch (type)
 			{
@@ -124,7 +124,7 @@ namespace PokeForeverIHM.Class
 					SetImage = "ms-appx:///Assets/Balls/SafariBall.png";
 					break;
 			}
+			Quantity = quantity;
 		}
-
 	}
 }

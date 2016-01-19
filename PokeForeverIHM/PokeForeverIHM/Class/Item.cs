@@ -51,17 +51,17 @@ namespace PokeForeverIHM.Class
 					instance.Add(new Item("Pokebike"));
 					instance.Add(new Item("Pokeflute"));
 					instance.Add(new Item("FishingRod"));
-					instance.Add(new Item("Potion"));
-					instance.Add(new Item("Antidote"));
+					instance.Add(new Item("Potion", 5));
+					instance.Add(new Item("Antidote", 3));
 				}
 				return instance;
 			}
 		}
 
-		public Item(string name)
+		public Item(string name, ushort quantity = 0)
 		{
 			SetImage = $"ms-appx:///Assets/Items/{name}.png";
-			Quantity = 0;
+			Quantity = quantity;
 		}
 	}
 }
