@@ -20,10 +20,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Padding="0,5,0,5" CanDrag="False" HorizontalAlignment="Center" Margin="0" Background="Black" CornerRadius="5" Height="90" Width="70">
-                        <Image Source="{Binding GetImage}" Height="90" VerticalAlignment="Top"/>
-                        <TextBlock Text="{Binding Quantity}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="12"/>
-                    </StackPanel>
+                    <uControl:BackpackItemTemplate/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

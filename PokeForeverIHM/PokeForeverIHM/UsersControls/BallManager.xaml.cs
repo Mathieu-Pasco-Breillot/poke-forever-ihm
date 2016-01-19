@@ -2,7 +2,7 @@
 using PokeForeverIHM.Class;
 using Windows.UI.Xaml.Controls;
 
-// Pour plus d'informations sur le modèle d'élément Page vierge, voir la page http://go.microsoft.com/fwlink/?LinkId=234238
+// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace PokeForeverIHM.UsersControls
 {

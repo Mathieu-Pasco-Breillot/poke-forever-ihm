@@ -111,6 +111,9 @@
     <Compile Include="UsersControls\ActionButton.xaml.cs">
       <DependentUpon>ActionButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsersControls\BackpackItemTemplate.xaml.cs">
+      <DependentUpon>BackpackItemTemplate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UsersControls\ButtonDirection.xaml.cs">
       <DependentUpon>ButtonDirection.xaml</DependentUpon>
     </Compile>
@@ -387,6 +390,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UsersControls\ActionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\BackpackItemTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
