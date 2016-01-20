@@ -9,8 +9,14 @@ namespace PokeForeverIHM.Class
 	public class Pokemon
 	{
 		string name;
+		ushort hp;
+		ushort attack;
+		ushort defense;
+		ushort critic;
+		ushort speed;
 		string @abstract;
-		short level;
+		ushort level;
+		PokemonNature nature;
 		PokemonType type;
 		ImageSource image, imageType;
 		private static ObservableCollection<Pokemon> instance;
@@ -25,6 +31,71 @@ namespace PokeForeverIHM.Class
 			set
 			{
 				name = value;
+			}
+		}
+
+		public ushort Attack
+		{
+			get
+			{
+				return attack;
+			}
+
+			set
+			{
+				attack = value;
+			}
+		}
+
+		public ushort Hp
+		{
+			get
+			{
+				return hp;
+			}
+
+			set
+			{
+				hp = value;
+			}
+		}
+
+		public ushort Defense
+		{
+			get
+			{
+				return defense;
+			}
+
+			set
+			{
+				defense = value;
+			}
+		}
+
+		public ushort Speed
+		{
+			get
+			{
+				return speed;
+			}
+
+			set
+			{
+				speed = value;
+			}
+		}
+
+		public ushort Critic
+		{
+			get
+			{
+				return critic;
+			}
+
+			set
+			{
+				critic = value;
 			}
 		}
 
@@ -50,7 +121,7 @@ namespace PokeForeverIHM.Class
 
 			set
 			{
-				level = (short)value;
+				level = (ushort)value;
 			}
 		}
 
@@ -97,6 +168,20 @@ namespace PokeForeverIHM.Class
 				return imageType;
 			}
 		}
+
+		public PokemonNature Nature
+		{
+			get
+			{
+				return nature;
+			}
+
+			set
+			{
+				nature = value;
+			}
+		}
+
 		public static ObservableCollection<Pokemon> Instance
 		{
 			get
@@ -106,6 +191,12 @@ namespace PokeForeverIHM.Class
 					instance = new ObservableCollection<Pokemon>();
 					Random type = new Random();
 					Random level = new Random();
+					Random hp = new Random();
+					Random attack = new Random();
+					Random defense = new Random();
+					Random critic = new Random();
+					Random speed = new Random();
+					Random nature = new Random();
 					#region Create names
 					Dictionary<string, string> names = new Dictionary<string, string>();
 					names.Add("Bulbizarre", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
@@ -271,7 +362,7 @@ namespace PokeForeverIHM.Class
 
 					foreach (KeyValuePair<string, string> pokemon in names)
 					{
-						instance.Add(new Pokemon(pokemon.Key, (short)level.Next(1, 99), (PokemonType)type.Next(1, 18), $"ms-appx:///Assets/Square44x44Logo.scale-200.png", pokemon.Value));
+						instance.Add(new Pokemon(pokemon.Key, (ushort)level.Next(1, 99), (ushort)hp.Next(25, 300), (ushort)attack.Next(10, 250), (ushort)defense.Next(10, 250), (ushort)critic.Next(1, 100), (ushort)speed.Next(10, 250), (PokemonType)type.Next(1, 18), (PokemonNature)nature.Next(1, 25), $"ms-appx:///Assets/Square44x44Logo.scale-200.png", pokemon.Value));
 					}
 					//for (int i = 0; i < names.Count; i++)
 					//{
@@ -291,7 +382,7 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public Pokemon(string name, short level, PokemonType type, string imageURI, string @abstract = "")
+		public Pokemon(string name, ushort level, ushort hp, ushort attack, ushort defense, ushort critic, ushort speed, PokemonType type, PokemonNature nature, string imageURI, string @abstract = "")
 		{
 			Name = name;
 			Level = level;
