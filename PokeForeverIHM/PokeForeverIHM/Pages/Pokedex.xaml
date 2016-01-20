@@ -12,20 +12,6 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="140"/>
         </Grid.ColumnDefinitions>
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
-                        <AdaptiveTrigger MinWindowWidth="720" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="ItemContainer.Abstract.Visibility" Value="Collapsed"/>
-                        <Setter Target="ItemContainer.BigTemplate.Width" Value="*"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
         <Pivot x:Name="PokePivot" ItemsSource="{Binding}" Background="Black">
             <Pivot.HeaderTemplate>
                 <DataTemplate>
@@ -37,66 +23,7 @@
             </Pivot.HeaderTemplate>
             <Pivot.ItemTemplate>
                 <DataTemplate>
-                    <Grid x:Name="ItemContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition x:Name="BigTemplate" Width="0" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
-                        <Image Source="{Binding GetImageType}" Width="25" Height="25" Margin="0,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                        <Grid VerticalAlignment="Stretch" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Padding="50">
-                            <Image Source="{Binding GetImage}"/>
-                        </Grid>
-                        <TextBlock x:Name="Abstract" Text="{Binding Abstract}" Margin="10,10,0,0" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="WrapWholeWords"/>
-                        <Grid Grid.Column="3" Grid.Row="0" Grid.RowSpan="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/><!--HP & Lvl-->
-                                <RowDefinition Height="*"/><!--Attack & Def-->
-                                <RowDefinition Height="*"/><!--Critic & Speed-->
-                                <RowDefinition Height="*"/><!--Nature-->
-                                <RowDefinition Height="*"/><!--Abstract-->
-                            </Grid.RowDefinitions>
-                            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                                <TextBlock x:Name="HP" Text="PV" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                                <ProgressBar x:Name="HPBar" Minimum="25" Value="{Binding Hp}" Maximum="300"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                                <TextBlock x:Name="Lvl" Text="Level" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                                <ProgressBar x:Name="LvlBar" Minimum="1" Value="{Binding Level}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                                <TextBlock x:Name="Atk" Text="Attaque" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                                <ProgressBar x:Name="AtkBar" Minimum="10" Value="{Binding Attack}" Maximum="250"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                                <TextBlock x:Name="Def" Text="Défense" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                                <ProgressBar x:Name="DefBar" Minimum="10" Value="{Binding Defense}" Maximum="250"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-                                <TextBlock x:Name="Critic" Text="Critic" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                                <ProgressBar x:Name="CriticBar" Minimum="0" Value="{Binding Critic}" Maximum="100"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
-                                <TextBlock x:Name="Speed" Text="Vitesse" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                                <ProgressBar x:Name="SpeedBar" Minimum="10" Value="{Binding Speed}" Maximum="250"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
-                                <TextBlock Text="Nature : " Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                                <TextBlock x:Name="Nature" Text="{Binding Nature}" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
-                                <TextBlock x:Name="Abstract" Text="{Binding Abstract}" Foreground="White" FontSize="14"  HorizontalAlignment="Stretch" TextWrapping="WrapWholeWords"/>
-                            </StackPanel>
-                        </Grid>
-                    </Grid>
+                    <uControl:PokedexItem/>
                 </DataTemplate>
             </Pivot.ItemTemplate>
         </Pivot>
