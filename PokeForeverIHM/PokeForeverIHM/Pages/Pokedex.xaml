@@ -12,10 +12,23 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="140"/>
         </Grid.ColumnDefinitions>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="PokePivot.Background" Value="Pink" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Pivot x:Name="PokePivot" ItemsSource="{Binding}" Background="Black">
             <Pivot.HeaderTemplate>
                 <DataTemplate>
-                    <StackPanel Width="100%" HorizontalAlignment="Stretch">
+                    <StackPanel HorizontalAlignment="Stretch">
                         <TextBlock Text="{Binding Name}" Foreground="White" FontWeight="Bold" FontSize="12"/>
                         <TextBlock Text="{Binding Level}" Foreground="White" FontSize="12"/>
                     </StackPanel>
