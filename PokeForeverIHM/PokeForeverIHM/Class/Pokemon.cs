@@ -189,12 +189,12 @@ namespace PokeForeverIHM.Class
 				if (instance == null)
 				{
 					instance = new ObservableCollection<Pokemon>();
-					Random type = new Random();
-					Random level = new Random();
-					Random hp = new Random();
-					Random atkDefSpeed = new Random();
-					Random critic = new Random();
-					Random nature = new Random();
+					Random type = new Random(3);
+					Random level = new Random(41);
+					Random hp = new Random(37);
+					Random atkDefSpeed = new Random(29);
+					Random critic = new Random(61);
+					Random nature = new Random(89);
 					#region Create names
 					Dictionary<string, string> names = new Dictionary<string, string>();
 					names.Add("Bulbizarre", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
@@ -265,7 +265,7 @@ namespace PokeForeverIHM.Class
 					names.Add("Machoc", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
 					names.Add("Machopeur", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
 					names.Add("Mackogneur", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
-					names.Add("Chetiflor", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
+					names.Add("Chetiflore", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
 					names.Add("Boustiflor", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
 					names.Add("Empiflor", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
 					names.Add("Tentacool", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
