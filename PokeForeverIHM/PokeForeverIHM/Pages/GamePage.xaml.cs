@@ -133,7 +133,14 @@ namespace PokeForeverIHM
 			}
 			if (GridMap.Margin.Top < -1500)
 			{
-				GridMap.Margin = new Thickness(GridMap.Margin.Left, GridMap.Margin.Top + deltaDisplacement, GridMap.Margin.Right, GridMap.Margin.Bottom - deltaDisplacement);
+				if(Character.Margin.Top == 0)
+				{
+					GridMap.Margin = new Thickness(GridMap.Margin.Left, GridMap.Margin.Top + deltaDisplacement, GridMap.Margin.Right, GridMap.Margin.Bottom - deltaDisplacement);
+				}
+				else
+				{
+					Character.Margin = new Thickness(Character.Margin.Left, Character.Margin.Top - deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom + deltaDisplacement);
+				}
 			}
 			else
 			{
@@ -158,7 +165,14 @@ namespace PokeForeverIHM
 			}
 			if (GridMap.Margin.Bottom < -1580D)
 			{
-				GridMap.Margin = new Thickness(GridMap.Margin.Left, GridMap.Margin.Top - deltaDisplacement, GridMap.Margin.Right, GridMap.Margin.Bottom + deltaDisplacement);
+				if(Character.Margin.Bottom == 0)
+				{
+					GridMap.Margin = new Thickness(GridMap.Margin.Left, GridMap.Margin.Top - deltaDisplacement, GridMap.Margin.Right, GridMap.Margin.Bottom + deltaDisplacement);
+				}
+				else
+				{
+					Character.Margin = new Thickness(Character.Margin.Left, Character.Margin.Top + deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom - deltaDisplacement);
+				}
 			}
 			else
 			{
@@ -183,7 +197,15 @@ namespace PokeForeverIHM
 			}
 			if (GridMap.Margin.Left < -2880D)
 			{
-				GridMap.Margin = new Thickness(GridMap.Margin.Left + deltaDisplacement, GridMap.Margin.Top, GridMap.Margin.Right - deltaDisplacement, GridMap.Margin.Bottom);
+				if (Character.Margin.Left == 0)
+				{
+					GridMap.Margin = new Thickness(GridMap.Margin.Left + deltaDisplacement, GridMap.Margin.Top, GridMap.Margin.Right - deltaDisplacement, GridMap.Margin.Bottom);
+				}
+
+				else
+				{
+					Character.Margin = new Thickness(Character.Margin.Left - deltaDisplacement, Character.Margin.Top, Character.Margin.Right + deltaDisplacement, Character.Margin.Bottom);
+				}
 			}
 			else
 			{
@@ -208,7 +230,14 @@ namespace PokeForeverIHM
 			}
 			if (GridMap.Margin.Right < -2880D)
 			{
-				GridMap.Margin = new Thickness(GridMap.Margin.Left - deltaDisplacement, GridMap.Margin.Top, GridMap.Margin.Right + deltaDisplacement, GridMap.Margin.Bottom);
+				if(Character.Margin.Right == 0)
+				{
+					GridMap.Margin = new Thickness(GridMap.Margin.Left - deltaDisplacement, GridMap.Margin.Top, GridMap.Margin.Right + deltaDisplacement, GridMap.Margin.Bottom);
+				}
+				else
+				{
+					Character.Margin = new Thickness(Character.Margin.Left + deltaDisplacement, Character.Margin.Top, Character.Margin.Right - deltaDisplacement, Character.Margin.Bottom);
+				}
 			}
 			else
 			{
