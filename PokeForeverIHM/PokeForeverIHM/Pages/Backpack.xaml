@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="PokeForeverIHM.Pages.Backpack"
+    xmlns:uControl="using:PokeForeverIHM.UsersControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokeForeverIHM.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <uControl:BallManager x:Name="BallsList" Grid.Row="0"/>
+            <uControl:ItemManager x:Name="ItemsList" Grid.Row="1"/>
+            <uControl:StonesManager x:Name="StonesList" Grid.Row="2"/>
+        </Grid>
+        <uControl:MenuPanel Grid.Column="1"/>
+    </Grid>
+</Page>

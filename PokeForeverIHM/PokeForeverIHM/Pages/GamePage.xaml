@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="PokeForeverIHM.GamePage"
+    xmlns:uControl="using:PokeForeverIHM.UsersControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokeForeverIHM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="gamePage">
+
+    <RelativePanel x:Name="MainContainer" Background="Black" Margin="0" Padding="0">
+        <uControl:PokemonManager x:Name="PokemonList" VerticalAlignment="Center" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Height="90" Canvas.ZIndex="1"/>
+        <RelativePanel RelativePanel.Below="PokemonList" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Canvas.ZIndex="1">
+            <RelativePanel Margin="10,0,0,10" Padding="0" Width="160" Height="160" Canvas.ZIndex="2" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <uControl:DirectionalCross x:Name="ButtonMoveTop" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True" Holding="DirectionalCross_Holding" PointerPressed="DirectionalCross_PointerPressed"/>
+                <uControl:DirectionalCross x:Name="ButtonMoveLeft" RelativePanel.AlignVerticalCenterWithPanel="True" PointerPressed="DirectionalCross_PointerPressed" RelativePanel.AlignLeftWithPanel="True" RenderTransformOrigin="0.5,0.5" Holding="DirectionalCross_Holding">
+                    <uControl:DirectionalCross.RenderTransform>
+                        <CompositeTransform Rotation="270"/>
+                    </uControl:DirectionalCross.RenderTransform>
+                </uControl:DirectionalCross>
+                <uControl:DirectionalCross x:Name="ButtonMoveRight" Holding="DirectionalCross_Holding" PointerPressed="DirectionalCross_PointerPressed" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RenderTransformOrigin="0.5,0.5">
+                    <uControl:DirectionalCross.RenderTransform>
+                        <CompositeTransform Rotation="90"/>
+                    </uControl:DirectionalCross.RenderTransform>
+                </uControl:DirectionalCross>
+                <uControl:DirectionalCross x:Name="ButtonMoveBottom" Holding="DirectionalCross_Holding" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RenderTransformOrigin="0.5,0.5" PointerPressed="DirectionalCross_PointerPressed">
+                    <uControl:DirectionalCross.RenderTransform>
+                        <CompositeTransform Rotation="180"/>
+                    </uControl:DirectionalCross.RenderTransform>
+                </uControl:DirectionalCross>
+            </RelativePanel>
+            <Image x:Name="Character" Height="80" Width="80" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0" Source="ms-appx:///Assets/Player/player_stop_bottom.png" Canvas.ZIndex="1"/>
+            <uControl:ActionButton Margin="0,0,10,10" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.ZIndex="2" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
+            <uControl:MenuButton x:Name="menuButton" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="40" Height="80" Tapped="MenuButton_Tapped" Canvas.ZIndex="2"/>
+            <uControl:MenuPanel Visibility="Collapsed" x:Name="menuPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Canvas.ZIndex="2"/>
+        </RelativePanel>
+        <Grid x:Name="GridMap" Width="3840" Height="2160" Margin="-3840,-2160" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/Backgrounds/map.png"/>
+            </Grid.Background>
+        </Grid>
+    </RelativePanel>
+</Page>

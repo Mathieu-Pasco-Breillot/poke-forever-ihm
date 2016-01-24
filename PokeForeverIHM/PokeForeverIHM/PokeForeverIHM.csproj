@@ -17,7 +17,6 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>PokeForeverIHM_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -96,10 +95,60 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SavedGames.xaml.cs">
+    <Compile Include="Class\Item.cs" />
+    <Compile Include="Class\Nature.cs" />
+    <Compile Include="Class\Stone.cs" />
+    <Compile Include="Class\Ball.cs" />
+    <Compile Include="Class\HelperFunctions.cs" />
+    <Compile Include="Class\Player.cs" />
+    <Compile Include="Class\Pokemon.cs" />
+    <Compile Include="Class\Types.cs" />
+    <Compile Include="Pages\Backpack.xaml.cs">
+      <DependentUpon>Backpack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\ActionButton.xaml.cs">
+      <DependentUpon>ActionButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\BackpackItemTemplate.xaml.cs">
+      <DependentUpon>BackpackItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\ButtonDirection.xaml.cs">
+      <DependentUpon>ButtonDirection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Pokedex.xaml.cs">
+      <DependentUpon>Pokedex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\ItemManager.xaml.cs">
+      <DependentUpon>ItemManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\MenuButton.xaml.cs">
+      <DependentUpon>MenuButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\MenuPanel.xaml.cs">
+      <DependentUpon>MenuPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SavedGames.xaml.cs">
       <DependentUpon>SavedGames.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersControls\BallManager.xaml.cs">
+      <DependentUpon>BallManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\PokedexItem.xaml.cs">
+      <DependentUpon>PokedexItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\PokemonManager.xaml.cs">
+      <DependentUpon>PokemonManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\StonesManager.xaml.cs">
+      <DependentUpon>StonesManager.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -107,16 +156,221 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\250px-Barbicha-RS.png" />
-    <Content Include="Assets\250px-Brouhabam-RS.png" />
-    <Content Include="Assets\250px-Camérupt-RS.png" />
-    <Content Include="Assets\250px-Groret-RS.png" />
-    <Content Include="Assets\250px-Milobellus-RS.png" />
-    <Content Include="Assets\250px-Morphéo-RS.png" />
-    <Content Include="Assets\250px-Pingoléon-DP.png" />
-    <Content Include="Assets\250px-Tortipouss-Pt.png" />
-    <Content Include="Assets\773px-Florizarre-RFVF.png" />
-    <Content Include="Assets\Pokémon.jpg" />
+    <Content Include="Assets\Backgrounds\map.png" />
+    <Content Include="Assets\Backgrounds\underMap.png" />
+    <Content Include="Assets\Balls\HyperBall.png" />
+    <Content Include="Assets\Balls\MasterBall.png" />
+    <Content Include="Assets\Balls\PokeBall.png" />
+    <Content Include="Assets\Balls\SafariBall.png" />
+    <Content Include="Assets\Balls\SuperBall.png" />
+    <Content Include="Assets\Items\Antidote.png" />
+    <Content Include="Assets\Items\FishingRod.png" />
+    <Content Include="Assets\Items\Pokebike.png" />
+    <Content Include="Assets\Items\Pokeflute.png" />
+    <Content Include="Assets\Items\Potion.png" />
+    <Content Include="Assets\Player\player_left_foot_bottom.png" />
+    <Content Include="Assets\Player\player_left_foot_left.png" />
+    <Content Include="Assets\Player\player_left_foot_right.png" />
+    <Content Include="Assets\Player\player_left_foot_top.png" />
+    <Content Include="Assets\Player\player_right_foot_bottom.png" />
+    <Content Include="Assets\Player\player_right_foot_left.png" />
+    <Content Include="Assets\Player\player_right_foot_right.png" />
+    <Content Include="Assets\Player\player_right_foot_top.png" />
+    <Content Include="Assets\Player\player_stop_bottom.png" />
+    <Content Include="Assets\Player\player_stop_left.png" />
+    <Content Include="Assets\Player\player_stop_right.png" />
+    <Content Include="Assets\Player\player_stop_top.png" />
+    <Content Include="Assets\Pokemons\Abo.png" />
+    <Content Include="Assets\Pokemons\Abra.png" />
+    <Content Include="Assets\Pokemons\Aeromite.png" />
+    <Content Include="Assets\Pokemons\Akwakwak.png" />
+    <Content Include="Assets\Pokemons\Alakazam.png" />
+    <Content Include="Assets\Pokemons\Amonistar.png" />
+    <Content Include="Assets\Pokemons\Amonita.png" />
+    <Content Include="Assets\Pokemons\Aquali.png" />
+    <Content Include="Assets\Pokemons\Arbok.png" />
+    <Content Include="Assets\Pokemons\Arcanin.png" />
+    <Content Include="Assets\Pokemons\Artikodin.png" />
+    <Content Include="Assets\Pokemons\Aspicot.png" />
+    <Content Include="Assets\Pokemons\Barbicha.png" />
+    <Content Include="Assets\Pokemons\Boustiflor.png" />
+    <Content Include="Assets\Pokemons\Brouhabam.png" />
+    <Content Include="Assets\Pokemons\Camerupt.png" />
+    <Content Include="Assets\Pokemons\Canarticho.png" />
+    <Content Include="Assets\Pokemons\Caninos.png" />
+    <Content Include="Assets\Pokemons\Carabaffe.png" />
+    <Content Include="Assets\Pokemons\Carapuce.png" />
+    <Content Include="Assets\Pokemons\Chenipan.png" />
+    <Content Include="Assets\Pokemons\Chetiflore.png" />
+    <Content Include="Assets\Pokemons\Chrysacier.png" />
+    <Content Include="Assets\Pokemons\Coconfort.png" />
+    <Content Include="Assets\Pokemons\Colossinge.png" />
+    <Content Include="Assets\Pokemons\Crustabri.png" />
+    <Content Include="Assets\Pokemons\Dardargnan.png" />
+    <Content Include="Assets\Pokemons\Dodrio.png" />
+    <Content Include="Assets\Pokemons\Doduo.png" />
+    <Content Include="Assets\Pokemons\Draco.png" />
+    <Content Include="Assets\Pokemons\Dracolosse.png" />
+    <Content Include="Assets\Pokemons\Ectoplasma.png" />
+    <Content Include="Assets\Pokemons\Electhor.png" />
+    <Content Include="Assets\Pokemons\Electrode.png" />
+    <Content Include="Assets\Pokemons\Elektek.png" />
+    <Content Include="Assets\Pokemons\Empiflor.png" />
+    <Content Include="Assets\Pokemons\Evoli.png" />
+    <Content Include="Assets\Pokemons\Excelangue.png" />
+    <Content Include="Assets\Pokemons\Fantominus.png" />
+    <Content Include="Assets\Pokemons\Ferosinge.png" />
+    <Content Include="Assets\Pokemons\Feunard.png" />
+    <Content Include="Assets\Pokemons\Flagadoss.png" />
+    <Content Include="Assets\Pokemons\Galopa.png" />
+    <Content Include="Assets\Pokemons\Goupix.png" />
+    <Content Include="Assets\Pokemons\Gravalanch.png" />
+    <Content Include="Assets\Pokemons\Grodoudou.png" />
+    <Content Include="Assets\Pokemons\Grolem.png" />
+    <Content Include="Assets\Pokemons\Groret.png" />
+    <Content Include="Assets\Pokemons\Grotadmorv.png" />
+    <Content Include="Assets\Pokemons\Hypnomade.png" />
+    <Content Include="Assets\Pokemons\Hypocean.png" />
+    <Content Include="Assets\Pokemons\Hypotrempe.png" />
+    <Content Include="Assets\Pokemons\Insecateur.png" />
+    <Content Include="Assets\Pokemons\Kabuto.png" />
+    <Content Include="Assets\Pokemons\Kabutops.png" />
+    <Content Include="Assets\Pokemons\Kadabra.png" />
+    <Content Include="Assets\Pokemons\Kangourex.png" />
+    <Content Include="Assets\Pokemons\Kicklee.png" />
+    <Content Include="Assets\Pokemons\Kokiyas.png" />
+    <Content Include="Assets\Pokemons\Krabboss.png" />
+    <Content Include="Assets\Pokemons\Krabby.png" />
+    <Content Include="Assets\Pokemons\Lamantine.png" />
+    <Content Include="Assets\Pokemons\Leveinard.png" />
+    <Content Include="Assets\Pokemons\Leviator.png" />
+    <Content Include="Assets\Pokemons\Lippoutou.png" />
+    <Content Include="Assets\Pokemons\Lokhlass.png" />
+    <Content Include="Assets\Pokemons\M.Mime.png" />
+    <Content Include="Assets\Pokemons\Machoc.png" />
+    <Content Include="Assets\Pokemons\Machopeur.png" />
+    <Content Include="Assets\Pokemons\Mackogneur.png" />
+    <Content Include="Assets\Pokemons\Magicarpe.png" />
+    <Content Include="Assets\Pokemons\Magmar.png" />
+    <Content Include="Assets\Pokemons\Magneti.png" />
+    <Content Include="Assets\Pokemons\Magneton.png" />
+    <Content Include="Assets\Pokemons\Melodelfe.png" />
+    <Content Include="Assets\Pokemons\Melofee.png" />
+    <Content Include="Assets\Pokemons\Metamorph.png" />
+    <Content Include="Assets\Pokemons\Mew.png" />
+    <Content Include="Assets\Pokemons\Mewtwo.png" />
+    <Content Include="Assets\Pokemons\Miaouss.png" />
+    <Content Include="Assets\Pokemons\Milobellus.png" />
+    <Content Include="Assets\Pokemons\Mimitoss.png" />
+    <Content Include="Assets\Pokemons\Minidraco.png" />
+    <Content Include="Assets\Pokemons\Morpheo.png" />
+    <Content Include="Assets\Pokemons\Mystherbe.png" />
+    <Content Include="Assets\Pokemons\Nidoking.png" />
+    <Content Include="Assets\Pokemons\Nidoqueen.png" />
+    <Content Include="Assets\Pokemons\NidoranF.png" />
+    <Content Include="Assets\Pokemons\NidoranM.png" />
+    <Content Include="Assets\Pokemons\Nidorina.png" />
+    <Content Include="Assets\Pokemons\Nidorino.png" />
+    <Content Include="Assets\Pokemons\Noadkoko.png" />
+    <Content Include="Assets\Pokemons\Nosferalto.png" />
+    <Content Include="Assets\Pokemons\Nosferapti.png" />
+    <Content Include="Assets\Pokemons\Nœunœuf.png" />
+    <Content Include="Assets\Pokemons\Onix.png" />
+    <Content Include="Assets\Pokemons\Ortide.png" />
+    <Content Include="Assets\Pokemons\Ossatueur.png" />
+    <Content Include="Assets\Pokemons\Osselait.png" />
+    <Content Include="Assets\Pokemons\Otaria.png" />
+    <Content Include="Assets\Pokemons\Papilusion.png" />
+    <Content Include="Assets\Pokemons\Paras.png" />
+    <Content Include="Assets\Pokemons\Parasect.png" />
+    <Content Include="Assets\Pokemons\Persian.png" />
+    <Content Include="Assets\Pokemons\Piafabec.png" />
+    <Content Include="Assets\Pokemons\Pikachu.png" />
+    <Content Include="Assets\Pokemons\Pingoleon.png" />
+    <Content Include="Assets\Pokemons\Pingoléon.png" />
+    <Content Include="Assets\Pokemons\Poissirene.png" />
+    <Content Include="Assets\Pokemons\Poissoroy.png" />
+    <Content Include="Assets\Pokemons\Ponyta.png" />
+    <Content Include="Assets\Pokemons\Porygon.png" />
+    <Content Include="Assets\Pokemons\Psykokwak.png" />
+    <Content Include="Assets\Pokemons\Ptera.png" />
+    <Content Include="Assets\Pokemons\Ptitard.png" />
+    <Content Include="Assets\Pokemons\Pyroli.png" />
+    <Content Include="Assets\Pokemons\Racaillou.png" />
+    <Content Include="Assets\Pokemons\Rafflesia.png" />
+    <Content Include="Assets\Pokemons\Raichu.png" />
+    <Content Include="Assets\Pokemons\Ramoloss.png" />
+    <Content Include="Assets\Pokemons\Rapasdepic.png" />
+    <Content Include="Assets\Pokemons\Rattata.png" />
+    <Content Include="Assets\Pokemons\Rattatac.png" />
+    <Content Include="Assets\Pokemons\Rhinocorne.png" />
+    <Content Include="Assets\Pokemons\Rhinoferos.png" />
+    <Content Include="Assets\Pokemons\Rondoudou.png" />
+    <Content Include="Assets\Pokemons\Ronflex.png" />
+    <Content Include="Assets\Pokemons\Roucarnage.png" />
+    <Content Include="Assets\Pokemons\Roucool.png" />
+    <Content Include="Assets\Pokemons\Roucoups.png" />
+    <Content Include="Assets\Pokemons\Sabelette.png" />
+    <Content Include="Assets\Pokemons\Sablaireau.png" />
+    <Content Include="Assets\Pokemons\Saquedeneu.png" />
+    <Content Include="Assets\Pokemons\Scarabrute.png" />
+    <Content Include="Assets\Pokemons\Smogo.png" />
+    <Content Include="Assets\Pokemons\Smogogo.png" />
+    <Content Include="Assets\Pokemons\Soporifik.png" />
+    <Content Include="Assets\Pokemons\Spectrum.png" />
+    <Content Include="Assets\Pokemons\Stari.png" />
+    <Content Include="Assets\Pokemons\Staross.png" />
+    <Content Include="Assets\Pokemons\Sulfura.png" />
+    <Content Include="Assets\Pokemons\Tadmorv.png" />
+    <Content Include="Assets\Pokemons\Tartard.png" />
+    <Content Include="Assets\Pokemons\Taupiqueur.png" />
+    <Content Include="Assets\Pokemons\Tauros.png" />
+    <Content Include="Assets\Pokemons\Tentacool.png" />
+    <Content Include="Assets\Pokemons\Tentacruel.png" />
+    <Content Include="Assets\Pokemons\Tetarte.png" />
+    <Content Include="Assets\Pokemons\Tortank.png" />
+    <Content Include="Assets\Pokemons\Tortipouss.png" />
+    <Content Include="Assets\Backgrounds\FloralCity.png" />
+    <Content Include="Assets\Backgrounds\PKMN-Unova-Map.jpg" />
+    <Content Include="Assets\Pokemons\Bulbizarre.png" />
+    <Content Include="Assets\Pokemons\Dracaufeu.png" />
+    <Content Include="Assets\Pokemons\Florizarre.png" />
+    <Content Include="Assets\Pokemons\Herbizarre.png" />
+    <Content Include="Assets\Pokemons\Reptincel.png" />
+    <Content Include="Assets\Pokemons\Salameche.png" />
+    <Content Include="Assets\Backgrounds\Pokémon.jpg" />
+    <Content Include="Assets\Backgrounds\red-wall-red-pokemon-32627031-1280-887.jpg" />
+    <Content Include="Assets\Pokemons\Triopikeur.png" />
+    <Content Include="Assets\Pokemons\Tygnon.png" />
+    <Content Include="Assets\Pokemons\Voltali.png" />
+    <Content Include="Assets\Pokemons\Voltorbe.png" />
+    <Content Include="Assets\Stones\DawnStone.png" />
+    <Content Include="Assets\Stones\DuskStone.png" />
+    <Content Include="Assets\Stones\EverStone.png" />
+    <Content Include="Assets\Stones\FireStone.png" />
+    <Content Include="Assets\Stones\LeafStone.png" />
+    <Content Include="Assets\Stones\MoonStone.png" />
+    <Content Include="Assets\Stones\ShinyStone.png" />
+    <Content Include="Assets\Stones\SunStone.png" />
+    <Content Include="Assets\Stones\ThunderStone.png" />
+    <Content Include="Assets\Stones\WaterStone.png" />
+    <Content Include="Assets\Types\bug.png" />
+    <Content Include="Assets\Types\dark.png" />
+    <Content Include="Assets\Types\dragon.png" />
+    <Content Include="Assets\Types\electric.png" />
+    <Content Include="Assets\Types\fairy.png" />
+    <Content Include="Assets\Types\fight.png" />
+    <Content Include="Assets\Types\fire.png" />
+    <Content Include="Assets\Types\flying.png" />
+    <Content Include="Assets\Types\grass.png" />
+    <Content Include="Assets\Types\ground.png" />
+    <Content Include="Assets\Types\ice.png" />
+    <Content Include="Assets\Types\normal.png" />
+    <Content Include="Assets\Types\poison.png" />
+    <Content Include="Assets\Types\psychic.png" />
+    <Content Include="Assets\Types\rock.png" />
+    <Content Include="Assets\Types\steel.png" />
+    <Content Include="Assets\Types\water.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -131,11 +385,68 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="SavedGames.xaml">
+    <Page Include="Pages\Backpack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\ActionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\BackpackItemTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\ButtonDirection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Pokedex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\ItemManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\MenuButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\SavedGames.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UsersControls\BallManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\PokedexItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\PokemonManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\MenuPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\StonesManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
