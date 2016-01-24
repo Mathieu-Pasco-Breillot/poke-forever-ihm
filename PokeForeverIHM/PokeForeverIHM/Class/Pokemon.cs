@@ -189,12 +189,7 @@ namespace PokeForeverIHM.Class
 				if (instance == null)
 				{
 					instance = new ObservableCollection<Pokemon>();
-					Random type = new Random(3);
-					Random level = new Random(41);
-					Random hp = new Random(37);
-					Random atkDefSpeed = new Random(29);
-					Random critic = new Random(61);
-					Random nature = new Random(89);
+					Random r = new Random(3);
 					#region Create names
 					Dictionary<string, string> names = new Dictionary<string, string>();
 					names.Add("Bulbizarre", "Lorem ipsum dolor sit amet consectetur. Adipiscing elit uit ultrices nomine patri.");
@@ -363,14 +358,14 @@ namespace PokeForeverIHM.Class
 						instance.Add(
 							new Pokemon(
 								pokemon.Key,
-								(ushort)level.Next(1, 99),
-								(ushort)hp.Next(25, 300),
-								(ushort)atkDefSpeed.Next(10, 250),
-								(ushort)atkDefSpeed.Next(10, 250),
-								(ushort)critic.Next(1, 100),
-								(ushort)atkDefSpeed.Next(10, 250),
-								(PokemonType)type.Next(1, 18),
-								(PokemonNature)nature.Next(1, 25),
+								(ushort)r.Next(1, 99),
+								(ushort)r.Next(25, 300),
+								(ushort)r.Next(10, 250),
+								(ushort)r.Next(10, 250),
+								(ushort)r.Next(1, 100),
+								(ushort)r.Next(10, 250),
+								(PokemonType)r.Next(1, 18),
+								(PokemonNature)r.Next(1, 25),
 								$"ms-appx:///Assets/Square44x44Logo.scale-200.png",
 								pokemon.Value)
 						);
