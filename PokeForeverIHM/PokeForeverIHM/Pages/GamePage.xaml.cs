@@ -121,6 +121,7 @@ namespace PokeForeverIHM
 
 		private void MoveUp()
 		{
+			HelperFunctions.GetPixelColor((int)(MainView.Width/2D), (int)(MainView.Height/2 - Character.Margin.Top));
 			if (isLeftFoot)
 			{
 				Character.Source = player.ImageMoveUpRightFoot;
@@ -135,18 +136,30 @@ namespace PokeForeverIHM
 			{
 				if(Character.Margin.Top == 0)
 				{
-					GridMap.Margin = new Thickness(GridMap.Margin.Left, GridMap.Margin.Top + deltaDisplacement, GridMap.Margin.Right, GridMap.Margin.Bottom - deltaDisplacement);
+					GridMap.Margin = new Thickness(
+						GridMap.Margin.Left,
+						GridMap.Margin.Top + deltaDisplacement,
+						GridMap.Margin.Right, 
+						GridMap.Margin.Bottom - deltaDisplacement);
 				}
 				else
 				{
-					Character.Margin = new Thickness(Character.Margin.Left, Character.Margin.Top - deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom + deltaDisplacement);
+					Character.Margin = new Thickness(
+						Character.Margin.Left,
+						Character.Margin.Top - deltaDisplacement,
+						Character.Margin.Right,
+						Character.Margin.Bottom + deltaDisplacement);
 				}
 			}
 			else
 			{
 				if (Character.Margin.Top > -(Window.Current.Bounds.Height / 2) + Character.Height + 24)
 				{
-					Character.Margin = new Thickness(Character.Margin.Left, Character.Margin.Top - deltaDisplacement, Character.Margin.Right, Character.Margin.Bottom + deltaDisplacement); 
+					Character.Margin = new Thickness(
+						Character.Margin.Left,
+						Character.Margin.Top - deltaDisplacement,
+						Character.Margin.Right,
+						Character.Margin.Bottom + deltaDisplacement); 
 				}
 			}
 		}
