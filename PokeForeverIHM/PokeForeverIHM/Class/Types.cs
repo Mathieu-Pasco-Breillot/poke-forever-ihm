@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace PokeForeverIHM.Class
+﻿namespace PokeForeverIHM.Class
 {
 	public enum PokemonType
 	{
