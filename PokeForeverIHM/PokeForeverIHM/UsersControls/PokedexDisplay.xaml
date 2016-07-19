@@ -1,0 +1,30 @@
+﻿<UserControl
+    x:Class="PokeForeverIHM.UsersControls.PokedexDisplay"
+    xmlns:uControl="using:PokeForeverIHM.UsersControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PokeForeverIHM.UsersControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Pivot x:Name="PokePivot" ItemsSource="{Binding}" Background="Black">
+            <Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <TextBlock Text="{Binding Name}" Foreground="White" FontWeight="Bold" FontSize="12"/>
+                        <TextBlock Text="{Binding Level}" Foreground="White" FontSize="12"/>
+                    </StackPanel>
+                </DataTemplate>
+            </Pivot.HeaderTemplate>
+            <Pivot.ItemTemplate>
+                <DataTemplate>
+                    <uControl:PokedexItem/>
+                </DataTemplate>
+            </Pivot.ItemTemplate>
+        </Pivot>
+    </Grid>
+</UserControl>

@@ -12,21 +12,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="140"/>
         </Grid.ColumnDefinitions>
-        <Pivot x:Name="PokePivot" ItemsSource="{Binding}" Background="Black">
-            <Pivot.HeaderTemplate>
-                <DataTemplate>
-                    <StackPanel HorizontalAlignment="Stretch">
-                        <TextBlock Text="{Binding Name}" Foreground="White" FontWeight="Bold" FontSize="12"/>
-                        <TextBlock Text="{Binding Level}" Foreground="White" FontSize="12"/>
-                    </StackPanel>
-                </DataTemplate>
-            </Pivot.HeaderTemplate>
-            <Pivot.ItemTemplate>
-                <DataTemplate>
-                    <uControl:PokedexItem/>
-                </DataTemplate>
-            </Pivot.ItemTemplate>
-        </Pivot>
+        <uControl:PokedexDisplay Grid.Column="0"/>
         <uControl:MenuPanel Grid.Column="1"/>
     </Grid>
 </Page>
