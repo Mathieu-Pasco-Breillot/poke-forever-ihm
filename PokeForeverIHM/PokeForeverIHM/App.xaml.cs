@@ -1,26 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using Microsoft.Azure.Engagement;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace PokeForeverIHM
 {
-    /// <summary>
-    /// Fournit un comportement spécifique à l'application afin de compléter la classe Application par défaut.
-    /// </summary>
-    sealed partial class App : Application
+	/// <summary>
+	/// Fournit un comportement spécifique à l'application afin de compléter la classe Application par défaut.
+	/// </summary>
+	sealed partial class App : Application
     {
         /// <summary>
         /// Initialise l'objet d'application de singleton.  Il s'agit de la première ligne du code créé
@@ -39,7 +30,7 @@ namespace PokeForeverIHM
         /// <param name="e">Détails concernant la requête et le processus de lancement.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
+			InitEngagement(e);
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -72,18 +63,25 @@ namespace PokeForeverIHM
                 // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
                 // puis configurez la nouvelle page en transmettant les informations requises en tant que
                 // paramètre
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(SavedGames), e.Arguments);
             }
             // Vérifiez que la fenêtre actuelle est active
             Window.Current.Activate();
         }
 
-        /// <summary>
-        /// Appelé lorsque la navigation vers une page donnée échoue
-        /// </summary>
-        /// <param name="sender">Frame à l'origine de l'échec de navigation.</param>
-        /// <param name="e">Détails relatifs à l'échec de navigation</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+		private void InitEngagement(IActivatedEventArgs e)
+		{
+			EngagementAgent.Instance.Init(e);
+
+			//... rest of the code
+		}
+
+		/// <summary>
+		/// Appelé lorsque la navigation vers une page donnée échoue
+		/// </summary>
+		/// <param name="sender">Frame à l'origine de l'échec de navigation.</param>
+		/// <param name="e">Détails relatifs à l'échec de navigation</param>
+		void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
@@ -101,5 +99,10 @@ namespace PokeForeverIHM
             //TODO: enregistrez l'état de l'application et arrêtez toute activité en arrière-plan
             deferral.Complete();
         }
-    }
+
+		protected override void OnActivated(IActivatedEventArgs e)
+		{
+			InitEngagement(e);
+		}
+	}
 }

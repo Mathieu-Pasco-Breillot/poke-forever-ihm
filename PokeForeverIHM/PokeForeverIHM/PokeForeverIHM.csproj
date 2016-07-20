@@ -17,6 +17,8 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateThumbprint>044AE64F3C194E508979C3D9A8445069943A0CC7</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>PokeForeverIHM_StoreKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +91,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="PokeForeverIHM_StoreKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -106,11 +109,17 @@
     <Compile Include="Pages\Backpack.xaml.cs">
       <DependentUpon>Backpack.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MySQLite\SQLiteManager.cs" />
+    <Compile Include="ViewModel\GamePageViewModel.cs" />
     <Compile Include="Pages\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\overlay\EngagementPageOverlay.cs" />
     <Compile Include="UsersControls\ActionButton.xaml.cs">
       <DependentUpon>ActionButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersControls\AddDeleteGameButtons.xaml.cs">
+      <DependentUpon>AddDeleteGameButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsersControls\BackpackItemTemplate.xaml.cs">
       <DependentUpon>BackpackItemTemplate.xaml</DependentUpon>
@@ -140,15 +149,22 @@
     <Compile Include="UsersControls\BallManager.xaml.cs">
       <DependentUpon>BallManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsersControls\PokedexDisplay.xaml.cs">
+      <DependentUpon>PokedexDisplay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UsersControls\PokedexItem.xaml.cs">
       <DependentUpon>PokedexItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsersControls\PokemonManager.xaml.cs">
       <DependentUpon>PokemonManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsersControls\SavedGamesButtons.xaml.cs">
+      <DependentUpon>SavedGamesButtons.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UsersControls\StonesManager.xaml.cs">
       <DependentUpon>StonesManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\PlayerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -371,6 +387,7 @@
     <Content Include="Assets\Types\rock.png" />
     <Content Include="Assets\Types\steel.png" />
     <Content Include="Assets\Types\water.png" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -379,6 +396,13 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Resources\EngagementConfiguration.xml" />
+    <Content Include="Resources\html\EngagementAnnouncement.html" />
+    <Content Include="Resources\html\EngagementNotification.html" />
+    <Content Include="Resources\images\EngagementIconClose.png" />
+    <Content Include="Resources\images\EngagementIconNOk.png" />
+    <Content Include="Resources\images\EngagementIconNotification.png" />
+    <Content Include="Resources\images\EngagementIconOk.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -394,6 +418,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UsersControls\ActionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersControls\AddDeleteGameButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -429,6 +457,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UsersControls\PokedexDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UsersControls\PokedexItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -441,12 +473,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UsersControls\SavedGamesButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UsersControls\StonesManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.13.0">
+      <Name>SQLite for Universal Windows Platform</Name>
+    </SDKReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

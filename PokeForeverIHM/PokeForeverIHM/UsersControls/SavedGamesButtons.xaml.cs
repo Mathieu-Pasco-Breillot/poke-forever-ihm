@@ -23,5 +23,10 @@ namespace PokeForeverIHM.UsersControls
 		{
 			this.InitializeComponent();
 		}
+
+		private void LoadGame(object sender, RoutedEventArgs e)
+		{
+			((Frame)Window.Current.Content).Navigate(typeof(GamePage));
+		}
 	}
 }

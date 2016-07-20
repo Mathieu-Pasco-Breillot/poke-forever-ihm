@@ -1,4 +1,5 @@
 ﻿using System;
+using SQLite.Net.Attributes;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -7,10 +8,11 @@ namespace PokeForeverIHM.Class
 	public class Player
 	{
 		private static Player instance;
-		private string name;
+		private int id;
+		private string pseudo, email, password;
 		ImageSource imageStopDown, imageStopUp, imageStopLeft, imageStopRight, imageMoveDownLeftFoot, imageMoveDownRightFoot, imageMoveUpLeftFoot, imageMoveUpRightFoot, imageMoveLeftLeftFoot, imageMoveLeftRightFoot, imageMoveRightLeftFoot, imageMoveRightRightFoot;
 
-		private Player()
+		public Player()
 		{
 			SetImageStopDown = $"ms-appx:///Assets/Player/player_stop_bottom.png";
 			SetImageStopUp = $"ms-appx:///Assets/Player/player_stop_top.png";
@@ -38,16 +40,60 @@ namespace PokeForeverIHM.Class
 			}
 		}
 
-		public string Name
+		[PrimaryKey, AutoIncrement]
+		[Column("id")]
+		public int Id
 		{
 			get
 			{
-				return name;
+				return id;
 			}
 
 			set
 			{
-				name = value;
+				this.id = value;
+			}
+		}
+
+		[Column("name")]
+		public string Pseudo
+		{
+			get
+			{
+				return pseudo;
+			}
+
+			set
+			{
+				pseudo = value;
+			}
+		}
+
+		[Column("email")]
+		public string Email
+		{
+			get
+			{
+				return email;
+			}
+
+			set
+			{
+				email = value;
+			}
+		}
+
+		[Column("password")]
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+
+			set
+			{
+				password = value;
 			}
 		}
 
