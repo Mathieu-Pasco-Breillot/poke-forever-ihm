@@ -14,12 +14,30 @@ namespace PokeForeverIHM.ViewModel
 {
 	class PlayerViewModel
 	{
+		/// <summary>
+		/// The GamePage view
+		/// </summary>
 		private GamePage myGamePageView;
+		/// <summary>
+		/// The unique instance of the player
+		/// </summary>
 		private Player player = Player.Instance;
+		/// <summary>
+		/// The value of each displacement done by the player in pixels
+		/// </summary>
 		private const double deltaDisplacement = 20D;
+		/// <summary>
+		/// Local variable to know which asset should be displayed
+		/// </summary>
 		private bool isLeftFoot = false;
+		/// <summary>
+		/// Local varibale to know what arrow key was triggered
+		/// </summary>
 		private VirtualKey lastArrowKeyTriggered;
-		TranslateTransform MenuPanelTranslate = new TranslateTransform();
+		/// <summary>
+		/// Constructor of the view model. Binding events to graphical components.
+		/// </summary>
+		/// <param name="myGamePageView"></param>
 		public PlayerViewModel(GamePage myGamePageView)
 		{
 			this.myGamePageView = myGamePageView;
@@ -46,6 +64,10 @@ namespace PokeForeverIHM.ViewModel
 		}
 
 		#region KeyboardMoves
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
 		private void ChangeAssets(object sender)
 		{
 			// Used to close the menu panel
@@ -115,7 +137,6 @@ namespace PokeForeverIHM.ViewModel
 					break;
 			}
 		}
-
 
 		private void MoveUp()
 		{

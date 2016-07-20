@@ -106,6 +106,8 @@
     <Compile Include="Class\Player.cs" />
     <Compile Include="Class\Pokemon.cs" />
     <Compile Include="Class\Types.cs" />
+    <Compile Include="EnumManager\DataConnectionResource.cs" />
+    <Compile Include="EnumManager\StringValueAttribute.cs" />
     <Compile Include="Pages\Backpack.xaml.cs">
       <DependentUpon>Backpack.xaml</DependentUpon>
     </Compile>
@@ -165,6 +167,7 @@
       <DependentUpon>StonesManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\PlayerViewModel.cs" />
+    <Compile Include="WebService\WebServiceManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

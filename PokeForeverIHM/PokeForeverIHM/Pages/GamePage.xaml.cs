@@ -7,21 +7,55 @@ using Windows.UI.Xaml.Controls;
 
 namespace PokeForeverIHM
 {
+	/// <summary>
+	/// The main view of the game, when the player is walking on the world
+	/// </summary>
 	public sealed partial class GamePage : EngagementPageOverlay
 	{
+		/// <summary>
+		/// The GamePage view model
+		/// </summary>
 		private GamePageViewModel gamePageViewModel;
+		/// <summary>
+		/// The Player view model
+		/// </summary>
 		private PlayerViewModel playerViewModel;
+		/// <summary>
+		/// Menu Panel object
+		/// </summary>
 		public MenuPanel myUCMenuPanel { get; set; }
-		public Image myUCImgCharacter { get; set; }
-
-		public Grid myUCGridMap { get; set; }
-
-		public DirectionalCross myUCButtonMoveTop { get; set; }
-		public DirectionalCross myUCButtonMoveLeft { get; set; }
-		public DirectionalCross myUCButtonMoveRight { get; set; }
-		public DirectionalCross myUCButtonMoveBottom { get; set; }
+		/// <summary>
+		/// The button to show or hide the menu panel
+		/// </summary>
 		public MenuButton myUCMenuButton { get; set; }
+		/// <summary>
+		/// Player asset
+		/// </summary>
+		public Image myUCImgCharacter { get; set; }
+		/// <summary>
+		/// The entire map
+		/// </summary>
+		public Grid myUCGridMap { get; set; }
+		/// <summary>
+		/// The top button of the directionnal cross
+		/// </summary>
+		public DirectionalCross myUCButtonMoveTop { get; set; }
+		/// <summary>
+		/// The left button of the directionnal cross
+		/// </summary>
+		public DirectionalCross myUCButtonMoveLeft { get; set; }
+		/// <summary>
+		/// The right button of the directionnal cross
+		/// </summary>
+		public DirectionalCross myUCButtonMoveRight { get; set; }
+		/// <summary>
+		/// The bottom button of the directionnal cross
+		/// </summary>
+		public DirectionalCross myUCButtonMoveBottom { get; set; }
 
+		/// <summary>
+		/// Constructor of the view which is passing itself to view models
+		/// </summary>
 		public GamePage()
 		{
 			InitializeComponent();

@@ -72,6 +72,8 @@ namespace PokeForeverIHM
 		private void InitEngagement(IActivatedEventArgs e)
 		{
 			EngagementAgent.Instance.Init(e);
+			var id = EngagementAgent.Instance.GetDeviceId();
+			EngagementReach.Instance.Init(e);
 
 			//... rest of the code
 		}
