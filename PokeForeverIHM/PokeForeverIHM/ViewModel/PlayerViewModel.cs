@@ -76,16 +76,16 @@ namespace PokeForeverIHM.ViewModel
 			DirectionalCross btn = (DirectionalCross)sender;
 			switch (btn.Name)
 			{
-				case "ButtonMoveTop":
+				case "XAMLButtonMoveTop":
 					MoveUp();
 					break;
-				case "ButtonMoveBottom":
+				case "XAMLButtonMoveBottom":
 					MoveDown();
 					break;
-				case "ButtonMoveLeft":
+				case "XAMLButtonMoveLeft":
 					MoveLeft();
 					break;
-				case "ButtonMoveRight":
+				case "XAMLButtonMoveRight":
 					MoveRight();
 					break;
 			}
@@ -267,7 +267,6 @@ namespace PokeForeverIHM.ViewModel
 			}
 		}
 		#endregion
-
 
 		#region FingerMoves
 		private void DirectionalCross_Holding(object sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
